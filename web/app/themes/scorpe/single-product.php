@@ -13,15 +13,14 @@
         </section>
         <section class="product-contact">
             <a href="<?= esc_url(home_url('contact')); ?>" class="button" >
-                <?= LanguageController::translateStaticText("Call us for more informations", "Pour plus d'informations, contactez-nous."); ?>
+                <?= LanguageController::translateStaticText("Get in touch", "Contactez-nous."); ?>
             </a>
         </section>
         <?php if(!empty(ProductController::hasVideo(get_the_ID()))): ?>
             <?php get_template_part('parts/products/demonstration'); ?>
         <?php endif; ?>
         <?php if($term_id):
-            $related_products = array();
-            $related_products = ProductController::getProducts($term_id); ?>
+            $related_products = ProductController::getProducts($term_id, 8, false, true, false, false, [get_the_ID()]); ?>
             <section id="product-crossselling-slider" class="splide product-crossselling" aria-label="Basic Structure Example">
                 <h3>OTHER PRODUCTS THAT MIGHT INTEREST YOU</h3>
                 <?php get_template_part('parts/products/related', null, array('term_id' => $term_id, 'related_products' => $related_products)); ?>

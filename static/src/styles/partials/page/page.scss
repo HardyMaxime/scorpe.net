@@ -169,7 +169,7 @@
 
     .button
     {
-        @include fontSize(20px);
+        @include fontSize(24px);
     }
 }
 
@@ -188,11 +188,6 @@
     .page-header .header-title .subtitle
     {
         @include fontSize(20px);
-    }
-
-    .button
-    {
-        @include fontSize(26px);
     }
 }
 
@@ -232,10 +227,5 @@
     .page-header .header-title .title
     {
         @include fontSize(40px);
-    }
-
-    .button
-    {
-        @include fontSize(26px);
     }
 }

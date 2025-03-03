@@ -73,6 +73,9 @@ body:not(.is-scrolled).single-product .navbar-background
 {
     position: relative;
     margin-top: _rem(60px);
+    max-width: $container;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product-video-wrapper .video-title

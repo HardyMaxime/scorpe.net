@@ -180,12 +180,20 @@ class ProductController
         return $term->name;
     }
 
-    public static function getProducts(string $term_id = "", int $limit = 8, bool $showAccessoire = true, bool $rand = false, bool $convert = false, bool $alphaOrder = false): WP_Query|array
+    public static function getProducts(
+        string $term_id = "", 
+        int $limit = 8, 
+        bool $showAccessoire = true, 
+        bool $rand = false, 
+        bool $convert = false,
+        bool $alphaOrder = false,
+        array $exclude = []): WP_Query|array
     {
         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $args = [
             'post_type' => 'product',
             'posts_per_page' => $limit,
+            'post__not_in' => $exclude
         ];
 
         if($rand)

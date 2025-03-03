@@ -13,10 +13,10 @@
 @media only screen and (max-width:$mobile)
 {
     .section-accueil.section,
-    .section-page.section,
-    .section-page
+    .section-page,
+    .section-page.section
     {
-        padding-top: $section-mobile-padding;
-        padding-bottom: $section-mobile-padding;
+        padding-top: _rem(30px);
+        padding-bottom: _rem(30px);
     }
 }

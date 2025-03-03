@@ -6,7 +6,7 @@
     {
         margin-bottom: _rem(80px);
         @include fontSize(36px);
-        font-weight: 400;
+        font-weight: 700;
     }
 }
 
@@ -44,7 +44,9 @@
     margin-top: _rem(40px);
     margin-bottom: _rem(20px);
     @include fontSize(20px);
-    font-weight: 300;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 700;
     text-align: center;
     width: 100%;
 }
@@ -56,10 +58,9 @@
         margin-top: 50px;
         h3
         {
-            margin-bottom:40px;
+            margin-bottom:20px;
             @include fontSize(22px);
             text-align: center;
-            font-weight: 400;
         }
     }
 
