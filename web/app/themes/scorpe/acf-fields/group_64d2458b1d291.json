@@ -1,0 +1,66 @@
+{
+    "key": "group_64d2458b1d291",
+    "title": "Page - Description",
+    "fields": [
+        {
+            "key": "field_64d2458bfb308",
+            "label": "Description of the page | Description de la page",
+            "name": "page_description",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "is-tiny",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "5"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "127"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "26"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "140"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1694184387
+}

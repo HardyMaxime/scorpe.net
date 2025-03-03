@@ -1,0 +1,123 @@
+.section-page-mentions
+{
+    padding-top: _rem(100px);
+    padding-bottom: _rem(100px);
+
+    strong
+    {
+        display: block;
+    }
+
+    &.has-decoration
+    {
+        &::before
+        {
+            right: -90px;
+            transform: rotate(90deg);
+            transform-origin: center;
+            top: 150px;
+            z-index: -1;
+
+            @media only screen and (max-width:$mobile)
+            {
+                display: none;
+            }
+
+        }
+    }
+}
+
+.section-page-mentions-content
+{
+    @include fontSize(18px);
+}
+
+.section-title-mentions
+{
+  @include fontSize(40px);
+    font-weight: 300;
+    text-align: center;
+    line-height: 1;
+    color: $primary;
+}
+
+.section-default-layout {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: _rem(70px);
+}
+
+.section-default-layout-col {
+    max-width: 595px;
+    padding-left: _rem(40px);
+    margin-left: _rem(100px);
+
+    &:first-child
+    {
+      padding-left: 0;
+      margin-left: _rem(0px);
+    }
+}
+
+.section-mentions-paragraphe
+{
+    margin-top: _rem(30px);
+}
+
+.section-default-layout-col ul 
+{
+    margin-top: _rem(50px);
+
+    &:first-child
+    {
+        margin-top: _rem(0px);
+    }
+}
+
+
+@media only screen and (max-width: 1200px)
+{
+    .section-page-mentions
+    {
+        padding-top: _rem(60px);
+        text-align: center;
+    }
+
+    .section-default-layout {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: _rem(50px);
+        margin-bottom: _rem(50px);
+        strong:first-of-type
+        {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    .section-default-layout > * + * {
+        margin-top: _rem(50px);
+        padding-left: 0;
+    }
+
+    .section-mentions-paragraphe
+    {
+        text-align: center;
+        strong:first-of-type
+        {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    .section-default-layout-col {
+        max-width: 595px;
+        padding-left: _rem(0px);
+        margin-left: auto !important;
+        margin-right: auto;
+        text-align: center;
+    }
+}

@@ -1,0 +1,43 @@
+.networks-list
+{
+    color: #ffffff;
+    display: flex;
+
+    li
+    {
+        margin-left: 7px;
+
+        &:first-child
+        {
+            margin-left: 0;
+        }
+    }
+}
+
+.network-link-name
+{
+    text-indent: -10000px;
+    display: block;
+}
+
+.network-link
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: rgba($color: #ffffff, $alpha: .2);
+    border-radius: 50%;
+    transition: background .3s ease;
+
+    &:hover
+    {
+        background: #fff !important;
+    }
+
+    .icon {
+        max-height: 17px;
+        max-width: 17px;
+    }
+}

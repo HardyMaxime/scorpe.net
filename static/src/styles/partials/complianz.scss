@@ -1,0 +1,26 @@
+/* == Page cookie == */
+#cmplz-document{
+    max-width: 100%;
+}
+
+.cookie-statement {
+    //padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.cmplz-documents .cookie-statement {
+    //padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+#cmplz-document h2, 
+#cmplz-document h3,
+#cmplz-document .cmplz-subtitle
+{
+    font-weight: 300;
+}
+
+.screen-reader-text {
+    text-indent: -100000000px;
+    display: inline-block;
+}

@@ -1,0 +1,22 @@
+.img-magnifier-container {
+    position:relative;
+}
+  
+.img-magnifier-glass {
+    position: absolute;
+    border: 2px solid #000;
+    //cursor: none;
+    width: 250px;
+    height: 150px;
+}
+
+.img-magnifier-container
+{
+    padding: 15px;
+    cursor: zoom-in;
+
+    &.magnifier-is-open
+    {
+        cursor: zoom-out;
+    }
+}

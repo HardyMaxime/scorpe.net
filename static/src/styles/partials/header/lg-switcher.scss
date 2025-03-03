@@ -1,0 +1,59 @@
+.lg-switcher
+{
+    position: relative;
+    width: 50px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 300;
+    padding-bottom: 5px;
+    transform: translateY(2px);
+    text-transform: uppercase;
+    color: $white;
+}
+
+.lg-switcher-current
+{
+    position: relative;
+    padding-right: 15px;
+    width: 100%;
+    cursor: pointer;
+
+    &::after
+    {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 9px;
+        height: 6px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5LjMxOCIgaGVpZ2h0PSI2LjA0NyIgdmlld0JveD0iMCAwIDkuMzE4IDYuMDQ3IiBmaWxsPSIjZmZmZmZmIiA+CiAgPHBhdGggaWQ9IlBhdGhfMzYiIGRhdGEtbmFtZT0iUGF0aCAzNiIgZD0iTTYuNjU5LDguMDQ3LDIsMy4zODgsMy4zODgsMiw2LjY1OSw1LjI3MSw5LjkzLDJsMS4zODgsMS4zODhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMiAtMikiIC8+Cjwvc3ZnPg==) no-repeat;
+    }
+}
+
+.lg-switcher-options
+{
+    position: absolute;
+    top: calc(100%);
+    left: 0;
+    padding: 5px 0;
+    width: 100%;
+    background: #ffffff;
+    color: $dark;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    box-shadow: 0 3px 6px rgba($color: $dark, $alpha: .16);
+    opacity: 0;
+    transform: translateY(-1000%);
+    transition: opacity .3s ease;
+
+}
+
+.lg-switcher:hover .lg-switcher-options
+{
+    opacity: 1;
+    transform: translateY(0);
+}

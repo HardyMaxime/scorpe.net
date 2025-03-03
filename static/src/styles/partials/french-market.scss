@@ -1,0 +1,62 @@
+.section-french-market
+{
+    border-top: solid #707070 1px;
+    margin-top: $section-mobile-padding;
+    padding-top: 70px;
+    
+    @media only screen and (min-width:$mobile)
+    {
+        margin-top: _rem(120px);
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.french-market-companies
+{
+    margin-top: _rem(60px);
+    display: grid;
+    //grid-template-columns: repeat(2, 1fr);
+    gap: _rem(120px);
+    max-width: 960px;
+
+    @media only screen and (max-width:$mobile)
+    {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 60px;
+    }
+}
+
+.french-market-company
+{
+    h3
+    {
+        margin-bottom: _rem(45px);
+    }
+    @media only screen and (max-width:$tablet)
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.french-market-company-link
+{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    a
+    {
+        margin-top: 10px;
+        flex-basis: 33%;
+        @include fontSize(20px);
+        font-weight: 300;
+
+        @media only screen and (max-width:$container)
+        {
+            flex-basis: 100%;
+            justify-content: center;
+        }
+    }
+}

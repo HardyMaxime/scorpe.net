@@ -1,0 +1,46 @@
+.section-accueil.section-online-demo
+{
+    padding-top: _rem(140px);
+    padding-bottom: _rem(140px);
+}
+
+.section-online-informations
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 90px;
+    margin-top: _rem(100px);
+
+    .title-with-arrow-icon
+    {
+        margin-bottom: 20px;
+    }
+
+    .link-with-arrow
+    {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width:$tablet)
+{
+    .section-online-informations
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width:$mobile)
+{
+    .section-online-informations
+    {
+        grid-template-columns: 1fr;
+        max-width: 410px;
+        width: 100%;
+        margin-top: $section-mobile-padding;
+        gap: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}

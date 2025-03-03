@@ -1,0 +1,78 @@
+{
+    "key": "group_64c8d6060fe75",
+    "title": "Accessoire(s) associé(s) à ce produit",
+    "fields": [
+        {
+            "key": "field_650c52c17acc6",
+            "label": "Ce produit est-il un accessoire ?",
+            "name": "product_is_accessorie",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Cocher cette case si ce produit est un accessoire.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_64c8d606af910",
+            "label": "Liste des ou de l'accessoire(s) associé(s) à ce produit",
+            "name": "product_accessorie",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": "",
+            "elements": "",
+            "bidirectional": 1,
+            "bidirectional_target": [
+                "field_64c8d606af910"
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1695307340
+}

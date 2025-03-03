@@ -1,0 +1,203 @@
+.section-page-contact
+{
+    padding-top: calc($topbarHeight + 50px);
+}
+
+.form-wrapper
+{
+    position: relative;
+    border-left: solid rgba($color: $white, $alpha: .2) 1px;
+    border-right: solid rgba($color: $white, $alpha: .2) 1px;
+    display: flex;
+    flex-direction: column;
+    padding-left: _rem(80px);
+    padding-right: _rem(80px);
+    padding-bottom: _rem(130px);
+
+    &::before,
+    &::after
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -1px;
+        height: 100%;
+        width: 1px;
+        background: rgba($color: $white, $alpha: .2);
+        display: block;
+        transform: translateY(-100%);
+    }
+
+    &::after
+    {
+        right: -1px;
+        left: auto;
+    }
+
+    form
+    {
+        max-width: 1065px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .submit
+    {
+        margin-top: 30px;
+        @include fontSize(30px)
+    }
+}
+
+.form-grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 115px;
+
+    @media only screen and (max-width:$tablet)
+    {
+        gap: 60px;
+    }
+}
+
+.form-large
+{
+    grid-column-start: span 2;
+}
+
+.form-group
+{
+    display: flex;
+    flex-direction: column;
+
+    label
+    {
+        display: none;
+    }
+}
+
+.form-input,
+.form-textarea
+{
+    background: transparent;
+    border: none;
+    border-bottom: solid rgba($color: $white, $alpha: .2) 1px;
+    color: #fff;
+    opacity: 1;
+    text-transform: uppercase;
+    @include fontSize(22px);
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 24px;
+    padding-bottom: 7px;
+    width: 100%;
+
+    &::placeholder
+    {
+        opacity: 1;
+    }
+}
+
+.form-textarea
+{
+    height: 200px;
+}
+
+.form-footer
+{
+    @include fontSize(14px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    margin-top: 7px;
+}
+
+.form-checkbox
+{
+    display: flex;
+    align-items: center;
+    [type="checkbox"]{
+        flex: none;
+        margin-top: 1px;
+        margin-right: 5px;
+    }
+}
+
+.output-form-message
+{
+    display: block;
+    width: 100%;
+}
+
+.wpcf7-list-item
+{
+    margin: 0;
+}
+
+.wpcf7 form .wpcf7-response-output
+{
+    position: relative;
+    padding: .75rem 1.25rem;
+    line-height: 1;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    border-radius: .25rem;
+}
+
+.wpcf7 form.valid .wpcf7-response-output,
+.wpcf7 form.sent .wpcf7-response-output
+{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+
+.wpcf7 form.invalid .wpcf7-response-output, 
+.wpcf7 form.unaccepted .wpcf7-response-output
+{ 
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.wpcf7-not-valid-tip
+{
+    font-size: .8rem;
+}
+
+@media only screen and (max-width:$extraMobile)
+{
+    .form-wrapper
+    {
+        display: flex;
+        flex-direction: column;
+        padding-left: 40px;
+        padding-right:40px;
+        padding-bottom: 40px;
+
+        .submit
+        {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+
+    .form-grid
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0 40px;
+    }
+}

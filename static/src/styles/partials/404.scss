@@ -1,0 +1,23 @@
+.is-404
+{
+    .fix-overflow 
+    {
+        height: 100%;
+    }
+}
+
+.page-erreur
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding-top: $section-mobile-padding;
+    padding-bottom: calc($section-mobile-padding * 2);
+}
+
+.page-erreur h1
+{
+    margin-bottom: 1rem;
+}

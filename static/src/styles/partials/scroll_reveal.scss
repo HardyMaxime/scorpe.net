@@ -1,0 +1,117 @@
+.reveal-loaded 
+{
+
+    .reveal [class*="reveal-"]
+    {
+        opacity: 0!important;
+        transform: translateY(20px)!important;
+        transition: 0s!important;
+    }
+
+    .reveal .fade-in
+    {
+        transform: translateY(0)!important;
+    }
+
+    .reveal-footer-text
+    {
+        opacity: 0!important;
+        transform: translateY(20px)!important;
+    }
+
+    .reveal .reveal-image 
+    {
+        opacity: 0!important;
+        transform: translateY(20px) scale(0.95)!important;
+    }
+    
+    .reveal .background-animation
+    {
+        transform: scaleY(0);
+    }
+
+    .reveal .from-left
+    {
+        transform: translateX(-30px)!important;
+        opacity: 0!important;
+    }
+
+    .reveal .from-right
+    {
+        transform: translateX(30px)!important;
+        opacity: 0!important;
+    }
+
+    &.show-footer .reveal-footer-text
+    {
+        opacity: 1!important;
+        transform: translateY(0)!important;
+    }
+
+    .reveal .reveal-slide-left
+    {
+        transform: translateX(100%)!important;
+
+    }
+    .reveal.layout-reverse .reveal-slide-left
+    {
+        transform: translateX(-100%)!important;
+    }
+}
+
+.background-animation
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform .8s ease-in-out;
+}
+
+.reveal-loaded [class*="reveal-"]{
+    transition: all .5s ease;
+}
+
+.reveal-loaded  .reveal-2 {
+    transition-delay: .1s;
+}
+
+@for $i from 1 through 20 {
+    .reveal-loaded  .reveal-#{$i} {
+        transition-delay: #{($i * 0.1) - 0.1}s;
+    }
+
+    .reveal-loaded .anime-delay-#{$i} 
+    {
+        animation-delay: #{($i * 0.5) - 0.1}s;
+    }
+}
+
+[data-smooth]
+{
+    transition: transform cubic-bezier(0.190, 1.000, 0.220, 1.000) 1s;
+}
+
+.reveal-footer {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal [class*="reveal-"] {
+        opacity: 1!important;
+        transform: translateY(0px)!important;
+    }
+    [class*="reveal-"]{
+        transition-duration: 0s!important;
+        transition-delay: 0s!important;
+    }
+}

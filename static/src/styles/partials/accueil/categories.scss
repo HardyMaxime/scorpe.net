@@ -1,0 +1,141 @@
+.section-accueil.section-categories
+{
+    padding-top: _rem(125px);
+    padding-bottom: _rem(125px);
+
+    .section-content-text
+    {
+        margin-top: _rem(30px);
+        //max-width: 80px;
+        width: 100%;
+    }
+}
+
+.categories-listing
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: _rem(75px);
+    margin-bottom: _rem(100px);
+
+    .category-item-title
+    {
+        margin-bottom: 30px;
+    }
+
+    .category-item-list
+    {
+        display: flex;
+        flex-direction: column;
+        @include fontSize(18px);
+        font-weight: 300;
+
+        li
+        {
+            width: 100%;
+            display: block;
+        }
+
+        a
+        {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+
+    .category-item
+    {
+        max-width: 25%;
+    }
+}
+
+@media only screen and (max-width: $container)
+{
+    .section-categories
+    {
+        .section-content-text
+        {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .category-item-list a
+        {
+            font-size: 20px;
+        }
+
+        .section-content
+        {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .categories-listing
+    {
+        flex-wrap: wrap;
+        row-gap: 60px;
+        margin-bottom: _rem(60px);
+    
+        .category-item-title,
+        .category-item-list a
+        {
+            justify-content: center;
+            text-align: center;
+        }
+        .category-item
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            flex-basis: calc(50% - 30px);
+        }
+    }
+}
+
+@media only screen and (max-width:$mobile)
+{
+    .categories-listing
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        text-align: center;
+        gap: 50px;
+        margin-bottom: $section-mobile-padding;
+
+        .category-item-title
+        {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .category-item-list
+        {
+            a
+            {
+                justify-content: center;
+            }
+        }
+
+        .section-accueil &
+        {
+            margin-bottom: 0; 
+        }
+    }
+
+    .section-accueil.section-categories
+    {
+        .section-content
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 550px;
+        }
+    }
+
+}

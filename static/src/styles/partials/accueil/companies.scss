@@ -1,0 +1,53 @@
+.section-accueil.section-group-companies
+{
+    border-bottom: $backgroundLine 1px solid;
+    padding-top: _rem(90px);
+    padding-bottom: _rem(160px);
+}
+
+.partner-slider
+{
+    margin-top: _rem(65px);
+    position: relative;
+
+    &::before,
+    &::after
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 15px;
+        background: linear-gradient(to left, rgba(255,255,255,0), $dark);
+        z-index: 10;
+    }
+
+    &::after
+    {
+        right: 0;
+        transform: rotate(180deg);
+    }
+}
+
+.partner-list-item-link
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    filter: grayscale(1);
+    transition: filter .3s ease;
+
+    img
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &:hover
+    {
+        filter: grayscale(0);
+    }
+}

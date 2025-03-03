@@ -1,0 +1,88 @@
+.hero-aside-controls
+{
+    .hero-slider-pagination
+    {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    .hero-slider-pagination-item
+    {
+        cursor: pointer;
+        flex-basis: 100%;
+        @media only screen and (max-width:$mobile)
+        {
+            display: none;
+            text-align: center;
+
+            &.is-active
+            {
+                max-width: 300px;
+                display: block;
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .hero-slider-pagination-item-text
+    {
+        font-size: 14px;
+        padding: 20px 0;
+        letter-spacing: 1.4px;
+    }
+}
+
+.hero-slider-pagination-item-progress
+{
+    position: relative;
+    background: rgba($color: #ffffff, $alpha: .2);
+    width: 100%;
+    height: 2px;
+}
+
+.hero-slider-pagination-item-progress-bar
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+    background: #AAD86B;
+    opacity: 0;
+    .is-active &
+    {
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width:$large)
+{
+    .hero-aside-controls
+    {
+        position: absolute;
+        bottom: 30px;
+        right: 0;
+        max-width: 196px;
+        width: 100%;
+        padding: 0;
+
+        .hero-slider-pagination
+        {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+        }
+    }
+
+    .hero-slider-pagination-item-progress-bar
+    {
+        left: auto;
+        right: 0;
+    }
+}

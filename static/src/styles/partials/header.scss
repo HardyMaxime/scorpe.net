@@ -1,0 +1,99 @@
+.header
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+
+    .is-accueil &
+    {
+        min-height: 100vh;
+        max-height: 1260px;
+
+        @media only screen and (min-height:1100px)
+        {
+            height: auto;
+            min-height: 1080px;
+        }
+
+        // Tablette verticale
+        @media only screen and (max-width:$tablet) and (min-height:1080px)
+        {
+            height: auto;
+            min-height: 600px;
+        }
+    }
+}
+
+.header-content-wrapper
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-grow: 1;
+    color: #fff;
+    z-index: 10;
+
+    .container-fluid
+    {
+        flex-grow: 1;
+        display: flex;
+    }
+}
+
+.header-group-title
+{
+    //width: calc(100vw - 200px);
+    height: 100%;
+    flex-grow: 1;
+    padding: 20px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .header-title
+    {
+        font-size: 100px;
+        font-weight: 300;
+        line-height: 1;
+        overflow-wrap: break-word;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    .header-subtitle
+    {
+        @include fontSize(30px);
+        font-weight: 300;
+    }
+
+    @media only screen and (min-width:$large)
+    {
+        padding-bottom: 65px;
+    }
+
+    @media only screen and (max-width:$tablet)
+    {
+        .header-title
+        {
+            font-size: 100px;
+        }
+    }
+
+    @media only screen and (max-width:$mobile)
+    {
+        .header-title
+        {
+            font-size: 45px;
+        }
+
+        .header-subtitle
+        {
+            font-size: 22px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.section-dark
+{
+    background: $dark;
+    color: $white;
+}
+
+.section-page
+{
+    padding-top: _rem(50px);
+    padding-bottom: _rem(150px);
+}
+
+@media only screen and (max-width:$mobile)
+{
+    .section-accueil.section,
+    .section-page.section,
+    .section-page
+    {
+        padding-top: $section-mobile-padding;
+        padding-bottom: $section-mobile-padding;
+    }
+}

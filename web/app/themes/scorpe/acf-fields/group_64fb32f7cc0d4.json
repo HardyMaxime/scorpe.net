@@ -1,0 +1,180 @@
+{
+    "key": "group_64fb32f7cc0d4",
+    "title": "Page - SAV | After sales",
+    "fields": [
+        {
+            "key": "field_64fb32f7d3691",
+            "label": "Manage page content | Gestion du contenu de la page",
+            "name": "page_sav",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_64fb32f7d4f71",
+                    "label": "Content | Contenu",
+                    "name": "wrapper",
+                    "aria-label": "",
+                    "type": "flexible_content",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "layouts": {
+                        "layout_64d3581ba9be4": {
+                            "key": "layout_64d3581ba9be4",
+                            "name": "content",
+                            "label": "Text | Texte",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_64fb32f7d70d9",
+                                    "label": "Paragraphe",
+                                    "name": "text",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "is-tiny",
+                                        "id": ""
+                                    },
+                                    "relevanssi_exclude": 0,
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 0,
+                                    "delay": 0
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    },
+                    "min": 1,
+                    "max": 6,
+                    "button_label": "Add | Ajouter"
+                },
+                {
+                    "key": "field_64fb3a729d70b",
+                    "label": "Miniature Video | Thumb video",
+                    "name": "sav_gallery",
+                    "aria-label": "",
+                    "type": "flexible_content",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "layouts": {
+                        "layout_64fb3a75f2157": {
+                            "key": "layout_64fb3a75f2157",
+                            "name": "miniature",
+                            "label": "Miniature",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_64fb3aec9d70c",
+                                    "label": "Miniature video",
+                                    "name": "thumb",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "relevanssi_exclude": 0,
+                                    "return_format": "array",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium"
+                                },
+                                {
+                                    "key": "field_64fb3b4f9d70d",
+                                    "label": "URL de la vidéo",
+                                    "name": "url",
+                                    "aria-label": "",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "relevanssi_exclude": 0,
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    },
+                    "min": "",
+                    "max": "",
+                    "button_label": "Ajouter ue miniature | Add thumb"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "497"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "499"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1694186371
+}

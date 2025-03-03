@@ -1,0 +1,233 @@
+.section-about-hero
+{
+    margin-top: 90px;
+    margin-bottom: 200px;
+
+    img
+    {
+        height: 840px;
+    }
+
+    @media only screen and (max-width: $tablet)
+    {
+        margin-top: 60px;
+        margin-bottom: 100px;
+
+        img
+        {
+            height: 500px;
+        }
+    }
+
+    @media only screen and (max-width:$mobile)
+    {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        img
+        {
+            height: 400px;
+        }
+    }
+}
+
+.section-about-philophy-content
+{
+    margin-top: _rem(90px);
+    column-count: 3;
+    column-gap: 50px;
+
+    @media only screen and (max-width: $tablet)
+    {
+        column-gap: 30px;
+    }
+
+    h2
+    {
+        margin-bottom: _rem(40px);
+    }
+
+    p
+    {
+        break-inside: avoid-column;
+    }
+}
+
+.section-conception
+{
+    position: relative;
+    background: $dark;
+    color: $white;
+    margin-top: _rem(200px);
+    padding: _rem(160px) 0;
+
+    h2
+    {
+        margin-bottom: _rem(60px);
+    }
+}
+
+.button-show-image
+{
+    position: relative;
+    background: $primary;
+    color: $white;
+    text-indent: -10000px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition: all ease-out .2s;
+
+    &:hover
+    {
+        background: darken($color: $primary, $amount: 10%);
+    }
+
+    &::before,
+    &::after
+    {
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(50% - 1px);
+        right: calc(50% - 1px);
+        border: solid $white 1px;
+        width: 1px;
+        height: 20px;
+        transform: translate(-50%, -50%);
+        transition: all ease-out .2s;
+    }
+
+    &::after
+    {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(90deg);
+        transition-delay: .3s;
+    }
+}
+
+.conception-step
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+    padding: _rem(55px) 0;
+    border-bottom: solid rgba($color: $white, $alpha: .5) 1px;
+
+    &:last-child
+    {
+        border-bottom: none;
+    }
+
+    button
+    {
+        flex: none;
+    }
+}
+
+.conception-image
+{
+    max-width: 590px;
+    width: 100%;
+    display: flex;
+    flex: none;
+    overflow: hidden;
+
+    &.glightbox img
+    {
+        transition: transform .3s ease;
+        &:hover
+        {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.conception-step-content
+{
+    h3
+    {
+        margin-bottom: _rem(35px);
+        a,
+        strong
+        {
+            color: $primary;
+        }
+    }
+    flex-grow: 1;
+
+    .image-first &
+    {
+        order: -1;
+    }
+}
+
+.section-place
+{
+    padding-top: _rem(140px);
+}
+
+@media only screen and (max-width:$tablet)
+{
+    .section-conception
+    {
+        margin-top: 100px;
+        padding: 100px 0;
+
+        h2
+        {
+            margin-bottom: 20px;
+        }
+    }
+
+    .section-place
+    {
+        padding-top: 100px;
+    }
+
+    .conception-image
+    {
+        max-width: 440px;
+    }
+}
+
+@media only screen and (max-width: $mobile)
+{
+
+    .section-about-philophy-content
+    {
+        column-count: 1;
+        text-align: center;
+    }
+
+    .section-conception
+    {
+        background: $dark;
+        color: $white;
+        margin-top: $section-mobile-padding;
+        padding: $section-mobile-padding 0;
+
+        h2
+        {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    }
+
+    .conception-step-content
+    {
+        order: -1;
+    }
+
+    .section-place
+    {
+        padding-top:$section-mobile-padding;
+    }
+
+    .conception-step
+    {
+       flex-direction: column;
+       text-align: center;
+    }
+}

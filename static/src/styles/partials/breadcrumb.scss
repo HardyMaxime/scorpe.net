@@ -1,0 +1,60 @@
+.breadcrumb
+{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    margin-right: auto;
+
+    .breadcrumb-category &
+    {
+        margin-top: 30px;
+        margin-bottom: -20px;
+    }
+
+    .breadcrumb-list
+    {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @media only screen and (max-width:$mobile)
+        {
+            justify-content: center;
+        }
+
+        li 
+        {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        & > li + li
+        {
+            padding-left: 5px;
+
+            &::before 
+            {
+                content: '>';
+                @include fontSize(11px);
+                padding-right: 5px;
+                flex: none;
+            }
+        }
+
+        & .active
+        {
+          font-weight: 500;
+        }
+    }
+}
+
+@media only screen and (max-width:$mobile)
+{
+    .breadcrumb
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

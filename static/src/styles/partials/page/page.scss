@@ -1,0 +1,241 @@
+.page-header.header
+{
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.page-header .header-background
+{
+    position: absolute;
+    //top: $topbarHeight;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    //height: calc(100% - $topbarHeight);
+    height: 100%;
+}
+
+.page-header .header-content
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    //max-width: 980px;
+    max-width: 55vw;
+    width: auto;
+    height:  100%;
+    margin-right: auto;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding-right: _rem(190px);
+    padding-bottom: _rem(40px);
+    padding-left:_rem(40px);
+    //clip-path: polygon(100% 0%, 20% 100%, 0% 100%, 100% 1000%);
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 80% 0%);
+}
+
+.page-header .header-content::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: .6);
+    z-index: -1;
+}
+
+.page-header .header-content-inner
+{
+    margin-top: auto;
+}
+
+.page-header .header-title
+{
+    text-transform: uppercase
+}
+
+.page-header .header-title .title
+{
+    @include fontSize(50px);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.page-header .header-title .subtitle
+{
+    @include fontSize(22px);
+}
+
+.page-header .header-title .button
+{
+    margin-top: 30px;
+}
+
+.button
+{
+    position: relative;
+    display: inline-flex;
+    padding-top: 4px;
+    padding-bottom: 10px;
+    color: $white;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-left: _rem(50px);
+    padding-right: _rem(50px);
+    text-align: center;
+    @include fontSize(22px);
+    line-height: 1;
+}
+
+.button::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    z-index: -1;
+    transition: background .3s ease;
+    transform: skewX(-20deg);
+}
+
+.button:hover
+{
+    color: $white !important;
+}
+
+.button:hover::before
+{
+    background: darken($primary, 10%);
+}
+
+.skew-title
+{
+    @include fontSize(40px);
+    color: $white;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-transform: uppercase;
+}
+
+.skew-title::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    z-index: -1;
+    transition: background .3s ease;
+    transform: skewX(-20deg);
+}
+
+@media only screen and (max-width:$containerFluid)
+{
+    .page-header .header-content-inner
+    {
+        max-width: _rem(750px);
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-header .header-title .title
+    {
+        @include fontSize(40px);
+    }
+
+    .page-header .header-title .subtitle
+    {
+        @include fontSize(20px);
+    }
+
+    .page-header .header-content
+    {
+        max-width: 65vw;
+        padding-bottom: _rem(60px);
+    }
+
+    .button
+    {
+        @include fontSize(20px);
+    }
+}
+
+@media only screen and (max-width:$tablet)
+{
+    .page-header .header-content
+    {
+        max-width: 75vw;
+    }
+
+    .page-header .header-title .title
+    {
+        @include fontSize(40px);
+    }
+
+    .page-header .header-title .subtitle
+    {
+        @include fontSize(20px);
+    }
+
+    .button
+    {
+        @include fontSize(26px);
+    }
+}
+
+@media only screen and (max-width:$mobile)
+{
+    .skew-title
+    {
+        @include fontSize(26px);
+        padding-left: 30px;
+        padding-right: 30px;
+        text-transform: uppercase;
+    }
+
+    .page-header .breadcrumb,
+    .page-header .header-title
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-header .header-content
+    {
+        max-width:100%;
+        width: 100%;
+        clip-path: none;
+        padding-left: _rem(20px);
+        padding-bottom: _rem(40px);
+        padding-right:_rem(20px);
+    }
+
+    .page-header .header-title
+    {
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .page-header .header-title .title
+    {
+        @include fontSize(40px);
+    }
+
+    .button
+    {
+        @include fontSize(26px);
+    }
+}

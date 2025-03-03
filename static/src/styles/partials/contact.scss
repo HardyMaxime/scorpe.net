@@ -1,0 +1,140 @@
+.page-contact
+{
+    position: relative;
+    background: rgba($color: #000000, $alpha: .7);
+    color: $white !important;
+
+    .fix-overflow,
+    .main
+    {
+        height: 100%;
+    }
+
+    .contact-title
+    {
+        @include fontSize(80px);
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+
+    .header
+    {
+        padding-top: 0 !important;
+    }
+
+    .section-contact-content
+    {
+        border-left: solid $backgroundLine 1px;
+        border-right: solid $backgroundLine 1px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .section-contact-content-item
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            font-weight: 300;
+            padding-top: $topbarHeight;
+            padding-bottom: $section-mobile-padding;
+
+            &:nth-child(2)
+            {
+                padding-left: 20px;
+                padding-right: 20px;
+                border-left: solid $backgroundLine 1px;
+                border-right: solid $backgroundLine 1px;
+
+                .wrapper
+                {
+                    max-width: 290px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            &:nth-child(3)
+            {
+                margin-left: auto;
+                padding-left: 30px;
+            }
+        }
+
+        .footer-logo
+        {
+            margin-top: 70px;
+        }
+    }
+
+    .footer
+    {
+        .footer-navigation-wrapper
+        {
+            border-top: solid $backgroundLine 1px;
+        }
+
+        &.section-dark
+        {
+            background: transparent;
+        }
+    }
+}
+
+@media only screen and (max-width:$tablet)
+{
+    .page-contact
+    {
+        .contact-title
+        {
+            @include fontSize(50px);
+        }
+        @include fontSize(16px);
+    }
+}
+
+@media only screen and (max-width:$extraMobile)
+{
+    .page-contact
+    {
+        .section-contact-content
+        {
+            border: none;
+            grid-template-columns: 1fr;
+            padding-top: _rem(80px);
+
+            .section-contact-content-item
+            {
+                justify-content: center;
+                align-items: center;
+                padding-top: 0;
+                text-align: center;
+
+                &:nth-child(2)
+                {
+                    padding-left: 0px;
+                    padding-right:0px;
+                    border: none;
+    
+                    .wrapper
+                    {
+                        max-width: 290px;
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                }
+    
+                &:nth-child(3)
+                {
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+            }
+    
+            .footer-logo
+            {
+                margin-top: $section-mobile-padding;
+            }
+        }
+    }
+}

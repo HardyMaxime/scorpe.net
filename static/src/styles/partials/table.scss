@@ -1,0 +1,145 @@
+table, tr, th, td
+{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table
+{
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead
+{
+    background-color: $primary;
+    color: $white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+tbody
+{
+    font-size: 16px;
+}
+
+tr, td, th
+{
+    border: solid #dfe4ea 1px;
+}
+
+th
+{
+    padding: 5px;
+}
+
+td 
+{
+    padding: 10px;
+}
+
+.table-wrapper
+{
+    margin-top: 20px;
+}
+
+.not-responsive {
+    .table-wrapper
+    {
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+@media only screen and (min-width:$mobile)
+{
+    :not(thead) > tr:nth-child(odd) {
+        background-color: #f1f2f6;
+    }
+}
+
+@media only screen and (max-width: $mobile) {
+
+    .details-content.not-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .not-responsive table {
+        width: 100%;
+        min-width: 900px;
+    }
+
+    .details-content:not(.not-responsive)
+    {
+        table,
+        thead, 
+        tbody, 
+        tr, 
+        th, 
+        td {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        tr
+        {
+            border: none;
+        }
+
+        table
+        {
+            border-radius: 5px;
+        }
+
+        thead {
+            display: none;
+        }
+
+        tbody
+        {
+            font-size: 14px;
+        }
+
+        td {
+            padding-left: calc(70% + 10px);
+            position: relative;
+            margin-top: -1px;
+            background: #FFF;
+            height: 100% !important;
+            word-break: break-word;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        td::before {
+            padding: 10px;
+            content: attr(data-label);
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 70%;
+            width: 100%;
+            bottom: 0;
+            background-color: $primary;
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        tr {
+            margin-bottom: 1rem;
+        }
+
+        th + td {
+            padding-left: 10px;
+        }
+        div:not(.not-responsive)
+        {
+
+        }
+    }
+}
