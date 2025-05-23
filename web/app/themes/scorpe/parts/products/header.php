@@ -23,12 +23,19 @@
                 <p class="subtitle">
                     <?= get_the_excerpt(); ?>
                 </p>
+            </hgroup>
+            <div class="single-products-links">
                 <?php if(ProductController::getFiles(get_the_ID(), 'datasheet')): ?>
                     <a href="<?= esc_url(ProductController::getFiles(get_the_ID(), 'datasheet')['url']); ?>" target="_blank" class="button" >
                         <?= LanguageController::translateStaticText("Technical characteristics", "Caractéristiques techniques"); ?>
                     </a>
                 <?php endif; ?>
-            </hgroup>
+                <?php if(ProductController::getFiles(get_the_ID(), 'manual')): ?>
+                    <a href="<?= esc_url(ProductController::getFiles(get_the_ID(), 'manual')['url']); ?>" target="_blank" class="button" >
+                        <?= LanguageController::translateStaticText("User manual", "Manuel d'utilisation"); ?>
+                    </a>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </header>

@@ -134,6 +134,18 @@
     }
 }
 
+.single-products-links
+{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: _rem(480px);
+    width: 100%;
+
+    a{ justify-content: center; }
+}
+
 @media only screen and (max-width: $tablet) 
 {
     .page-product {
@@ -273,5 +285,11 @@
             margin-bottom: 10px;
             margin-top: 20px;
         }
+    }
+
+    .single-products-links
+    {
+        margin-left: auto;
+        margin-right: auto;
     }
 }

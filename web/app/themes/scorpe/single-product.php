@@ -20,12 +20,13 @@
             <?php get_template_part('parts/products/demonstration'); ?>
         <?php endif; ?>
         <?php if($term_id):
-            $related_products = ProductController::getProducts($term_id, 8, false, true, false, false, [get_the_ID()]); ?>
+            $related_products = ProductController::getProducts($term_id, 8, false, true, false, false, [get_the_ID()]);
+            if($related_products->have_posts()): ?>
             <section id="product-crossselling-slider" class="splide product-crossselling" aria-label="Basic Structure Example">
                 <h3>OTHER PRODUCTS THAT MIGHT INTEREST YOU</h3>
                 <?php get_template_part('parts/products/related', null, array('term_id' => $term_id, 'related_products' => $related_products)); ?>
             </section>
-        <?php endif; ?>
+        <?php endif; endif; ?>
     </section>
 </section>
 <?php get_footer(); ?>

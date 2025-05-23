@@ -2,7 +2,7 @@
 /*
 * Class pour gérer les assets (styles et scripts)
 */
-define("NUMVER", "2.5.11");
+define("NUMVER", "2.6.3");
 define("nomTheme", "scorpe");
 
 class Site

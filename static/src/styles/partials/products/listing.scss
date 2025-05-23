@@ -64,11 +64,14 @@
 .product-name
 {
     //margin-top: 30px;
-    @include fontSize(20px);
+    max-width: 300px;
+    width: 100%;
     font-weight: 700;
     text-transform: uppercase;
     font-style: italic;
     text-align: center;
+    justify-content: center;
+    @include fontSize(20px);
 }
 
 @media only screen and (max-width:$tablet)
