@@ -4,13 +4,14 @@
     $products = ProductController::getProducts($term_id, 12, false, true);
     $tmp_query = DefaultController::changeWpQuery($products);
 ?>
+<?php get_template_part('parts/page/header', null, array(
+        "title" => DefaultController::getPageHeading(get_the_ID(), 'title'),
+        "description" => DefaultController::getPageHeading(get_the_ID(), 'description'),
+        "banner" => DefaultController::getPostThumbnail(get_the_ID()),
+        "class_title" => ['no-margin-bottom'],
+        "class_subtitle" => [""],
+)); ?>
 <section class="section-page section container section-white overflow-x">
-    <?php get_template_part('parts/page/heading', null, array(
-           "title" => DefaultController::getPageHeading(get_the_ID(), 'title'),
-           "description" => DefaultController::getPageHeading(get_the_ID(), 'description'),
-            "class_title" => ['no-margin-bottom'],
-            "class_subtitle" => [""],
-    )); ?>
     <?php get_template_part('parts/products/categories', null, array('term_id' => $term_id)); ?>
     <?php if($products->have_posts()): ?>
         <?php get_template_part("parts/products/listing", null, array('products' => $products)); ?>

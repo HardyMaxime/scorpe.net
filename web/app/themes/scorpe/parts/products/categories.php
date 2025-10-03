@@ -9,11 +9,11 @@
             $sub_categories = ProductController::getProductCategories($category->term_id);
         ?>
         <div class="category-item reveal">
-            <a href="<?= esc_url(get_category_link($category->term_id)); ?>" title="<?= esc_attr($category->name); ?>" >
-                <h3 class="category-item-title title-with-arrow-icon fade-in reveal-<?= $index; ?>">
+            <h3 class="category-item-title fade-in reveal-<?= $index; ?>">
+                <a href="<?= esc_url(get_category_link($category->term_id)); ?>" title="<?= esc_attr($category->name); ?>" >
                     <?= $category->name; ?>
-                </h3>
-            </a>
+                </a>
+            </h3>
             <?php if($sub_categories):?>
                 <ul class="reset-list category-item-list fade-in reveal-<?= ($index + 3); ?>">
                     <?php foreach($sub_categories as $key => $sub_category): ?>

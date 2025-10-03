@@ -8,6 +8,8 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
 
+indexnow
+
 # WordPress
 web/wp
 web/.htaccess
@@ -17,7 +19,6 @@ web/.htaccess
 
 # Dotenv
 .env
-.env_prod
 .env.*
 !.env.example
 
@@ -40,7 +41,6 @@ node_modules
 
 # WordPress
 web/wp
-web/.htaccess
 
 .DS_Store
 .vscode
@@ -64,6 +64,3 @@ wp-cli.local.yml
 dump.sql
 maquette
 maquette/*
-
-wp-config.php
-BackupController.php

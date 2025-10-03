@@ -2,11 +2,13 @@
     $products = $args['products'];
 ?>
 <section class="product-listing">
-    <?php while($products->have_posts()): $products->the_post(); ?>
+    <?php while($products->have_posts()): $products->the_post(); 
+    $thumb_url = ProductController::getProductThumbnails(get_the_ID(), "url", "listing");
+    ?>
     <a href="<?= esc_url(get_the_permalink()); ?>" class="product-listing-item" >
         <figure class="product-listing-item-figure product-image-outline" >
-            <?php if(!empty(ProductController::getProductThumbnails(get_the_ID(), "url"))): ?>
-                <img src="<?= esc_url(ProductController::getProductThumbnails(get_the_ID(), "url")); ?>"
+            <?php if(!empty($thumb_url)): ?>
+                <img src="<?= esc_url($thumb_url); ?>"
                     width="330" height="200" alt="<?= esc_attr(ProductController::getProductThumbnails(get_the_id(), "alt")); ?>" loading="lazy" />
             <?php else: ?>
                 <img src="<?= esc_url(ProductController::getDefautThumb()); ?>" 

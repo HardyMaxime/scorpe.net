@@ -244,6 +244,18 @@ figure.no-padding
     text-indent:-10000px;
 }
 
+@for $i from 1 through 10 {
+    .mt-#{$i} {
+      margin-top: $i * 10px;
+    }
+}
+
+@for $i from 1 through 10 {
+    .mb-#{$i} {
+      margin-bottom: $i * 10px;
+    }
+}
+
 @media only screen and (max-width: $mobile)
 {
     .text-justify,

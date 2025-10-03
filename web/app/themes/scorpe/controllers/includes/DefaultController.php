@@ -302,11 +302,11 @@ class DefaultController
         return esc_url(get_template_directory_uri() . '/assets/' . $path);
     }
 
-    public static function getPostThumbnail(string $post_id, string $params = null, bool $return_false = false): array|string
+    public static function getPostThumbnail(string $post_id, ?string $params = null, bool $return_false = false, ?string $size = ''): array|string
     {
         // Récupérer les informations de l'image
         $image_id = get_post_thumbnail_id($post_id);
-        $image_src = wp_get_attachment_image_src($image_id, 'listing');
+        $image_src = wp_get_attachment_image_src($image_id, $size);
         if($return_false && !$image_src) return false;
         // Générer les attributs
         $attributs = array(

@@ -70,7 +70,7 @@
 
 .page-header .header-title .subtitle
 {
-    @include fontSize(22px);
+    font-size: 1rem;
 }
 
 .page-header .header-title .button
@@ -156,11 +156,6 @@
         @include fontSize(40px);
     }
 
-    .page-header .header-title .subtitle
-    {
-        @include fontSize(20px);
-    }
-
     .page-header .header-content
     {
         max-width: 65vw;
@@ -183,11 +178,6 @@
     .page-header .header-title .title
     {
         @include fontSize(40px);
-    }
-
-    .page-header .header-title .subtitle
-    {
-        @include fontSize(20px);
     }
 }
 

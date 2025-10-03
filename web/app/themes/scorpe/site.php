@@ -2,14 +2,17 @@
 /*
 * Class pour gérer les assets (styles et scripts)
 */
-define("NUMVER", "2.6.3");
 define("nomTheme", "scorpe");
 
 class Site
 {
     function __construct ()
     {
+    }
 
+    public static function getVersion()
+    {
+        return json_decode(file_get_contents(get_template_directory() . '/assets/version.json'), true)["version"];
     }
 
     static function getPreloadAssets()
@@ -17,21 +20,21 @@ class Site
        $preloads = array(
             "style" => array(
                 "links" => array(
-                    get_template_directory_uri().'/assets/ressources/css/index.css'. '?ver=' . NUMVER,
+                    get_template_directory_uri().'/assets/ressources/css/index.css'. '?ver=' . site::getVersion(),
                 ),
-                "type" => "text/css"
+                "type" => "text/css"    
             ),
             "script" => array(
                 "links" => array(
-                    get_template_directory_uri().'/assets/ressources/scripts/index.js'. '?ver=' . NUMVER
+                    get_template_directory_uri().'/assets/ressources/scripts/index.js'. '?ver=' . site::getVersion()
                 ),
                 "type" => "text/script"
             ),
             "font" => array(
                 "links" => array(
-                    get_template_directory_uri().'/assets/ressources/fonts/IBMPlexSans-Regular.woff2',
-                    get_template_directory_uri().'/assets/ressources/fonts/IBMPlexSans-Light.woff2',
-                    get_template_directory_uri().'/assets/ressources/fonts/IBMPlexSans-Bold.woff2'
+                    #get_template_directory_uri().'/assets/ressources/fonts/IBMPlexSans-Regular.woff2',
+                    #get_template_directory_uri().'/assets/ressources/fonts/IBMPlexSans-Light.woff2',
+                    #get_template_directory_uri().'/assets/ressources/fonts/IBMPlexSans-Bold.woff2'
                 ),
                 "type" => "font/woff2"
             ),

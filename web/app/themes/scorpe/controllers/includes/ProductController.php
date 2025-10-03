@@ -247,10 +247,10 @@ class ProductController
      * @param string $id ID du produit
      * @param bool $onlyFirst Si on veut récupérer uniquement la première image
      */
-    public static function getProductThumbnails(string $id, string $param = ""): array|string
+    public static function getProductThumbnails(string $id, string $param = "", ?string $size = ""): array|string
     {
         //$images = DefaultController::field_value('product_preview_listing', $id);
-        $images = DefaultController::getPostThumbnail($id) ?: false;
+        $images = DefaultController::getPostThumbnail($id, null, false, $size) ?: false;
         if(empty($images))
         {
             $images = [

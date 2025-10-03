@@ -1,20 +1,21 @@
 import legacy from '@vitejs/plugin-legacy'
 import { defineConfig } from 'vite'
+import nunjucks from 'vite-plugin-nunjucks'
+import { vitePluginVersionFile } from './plugins/vite-assets-version.js'
+import fs from 'fs'
+import path from 'path'
 
 const THEME = "scorpe";
+const THEME_PATH = path.resolve(__dirname, '../web/app/themes/'+THEME);
 
 export default defineConfig({
     base: "./",
     root: './src',
     build: {
-        outDir: '../../web/app/themes/'+THEME+'/assets/ressources/',
-        assetsDir: '', // Leave `assetsDir` empty so that all static resources are placed in the root of the `dist` folder.
+        outDir: `${THEME_PATH}/assets/ressources/`,
+        assetsDir: '',
         assetsInlineLimit: 0,
         rollupOptions: {
-            //input: {
-                // Uncomment if you need to specify entry points for .html files
-                //index: resolve(__dirname, 'index.html'),
-            //},
             output: {
                 entryFileNames: `scripts/[name].js`,
                 chunkFileNames: `scripts/[name].js`,
@@ -38,9 +39,26 @@ export default defineConfig({
             }
         }
     },
+    server: {
+        host: '0.0.0.0', // Écoute sur toutes les interfaces
+        port: 5173,      // Port du serveur de développement
+    },
     plugins: [
         legacy({
             targets: ['defaults', 'not IE 11']
+        }),
+        nunjucks(),
+        vitePluginVersionFile({
+            outputPath: path.join(THEME_PATH, 'assets'),
+            fileName: 'version.json',
+            generateVersion: () => Date.now(),
+            verbose: true
         })
     ],
+    resolve: {
+        alias: {
+            '@images': path.resolve(__dirname, './src/images'),
+            '@': path.resolve(__dirname, './src')
+        }
+    },
 });

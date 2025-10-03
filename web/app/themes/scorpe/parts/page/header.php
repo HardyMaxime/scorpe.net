@@ -9,7 +9,6 @@
         $banner['url'] = DefaultController::assets("scorpe-technologies-defaut-thumb-video.jpg");
         $banner['alt'] = get_the_title();
     }
-
 ?>
 <header class="header page-header">
     <figure class="header-background reveal" >
@@ -25,8 +24,13 @@
                 <h1 class="title">
                     <?= $title; ?>
                 </h1>
-                <a href="<?= esc_url(ProductController::getFiles(get_the_ID(), 'datasheet')['url']); ?>" target="_blank" class="button" >
-                    <?= LanguageController::translateStaticText("Technical characteristics", "Caractéristiques techniques"); ?>
+                <?php if($description): ?>
+                    <div class="subtitle">
+                        <?= $description; ?>
+                    </div>
+                <?php endif; ?>
+                <a href="<?= esc_url(home_url('contact')); ?>" class="button" >
+                    <?= LanguageController::translateStaticText("Get in touch", "Contactez-nous."); ?>
                 </a>
             </hgroup>
         </div>
