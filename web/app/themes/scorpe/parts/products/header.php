@@ -11,30 +11,32 @@
             width="600" height="860" loading="lazy" />
         </picture>
     </figure>
-    <div class="header-content reveal">
-        <div class="header-content-inner slide-out-in reveal-4">
-            <?php get_template_part('parts/breadcrumb/breadcrumb', null, array(
-                'post_id' => get_the_ID()
-            )); ?>
-            <hgroup class="header-title">
-                <h1 class="title">
-                    <?= the_title(); ?>
-                </h1>
-                <p class="subtitle">
-                    <?= get_the_excerpt(); ?>
-                </p>
-            </hgroup>
-            <div class="single-products-links">
-                <?php if(ProductController::getFiles(get_the_ID(), 'datasheet')): ?>
-                    <a href="<?= esc_url(ProductController::getFiles(get_the_ID(), 'datasheet')['url']); ?>" target="_blank" class="button" >
-                        <?= LanguageController::translateStaticText("Technical characteristics", "Caractéristiques techniques"); ?>
-                    </a>
-                <?php endif; ?>
-                <?php if(ProductController::getFiles(get_the_ID(), 'manual')): ?>
-                    <a href="<?= esc_url(ProductController::getFiles(get_the_ID(), 'manual')['url']); ?>" target="_blank" class="button" >
-                        <?= LanguageController::translateStaticText("User manual", "Manuel d'utilisation"); ?>
-                    </a>
-                <?php endif; ?>
+    <div class="header-content-outter container">
+        <div class="header-content reveal">
+            <div class="header-content-inner slide-out-in reveal-4">
+                <?php get_template_part('parts/breadcrumb/breadcrumb', null, array(
+                    'post_id' => get_the_ID()
+                )); ?>
+                <hgroup class="header-title">
+                    <h1 class="title">
+                        <?= the_title(); ?>
+                    </h1>
+                    <p class="subtitle">
+                        <?= get_the_excerpt(); ?>
+                    </p>
+                </hgroup>
+                <div class="single-products-links">
+                    <?php if(ProductController::getFiles(get_the_ID(), 'datasheet')): ?>
+                        <a href="<?= esc_url(ProductController::getFiles(get_the_ID(), 'datasheet')['url']); ?>" target="_blank" class="button" >
+                            <?= LanguageController::translateStaticText("Technical characteristics", "Caractéristiques techniques"); ?>
+                        </a>
+                    <?php endif; ?>
+                    <?php if(ProductController::getFiles(get_the_ID(), 'manual')): ?>
+                        <a href="<?= esc_url(ProductController::getFiles(get_the_ID(), 'manual')['url']); ?>" target="_blank" class="button" >
+                            <?= LanguageController::translateStaticText("User manual", "Manuel d'utilisation"); ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>

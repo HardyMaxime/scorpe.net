@@ -18,21 +18,23 @@
                 width="600" height="860" loading="lazy" />
         </picture>
     </figure>
-    <div class="header-content reveal">
-        <div class="header-content-inner slide-out-in reveal-4">
-            <hgroup class="header-title">
-                <h1 class="title">
-                    <?= $title; ?>
-                </h1>
-                <?php if($description): ?>
-                    <div class="subtitle">
-                        <?= $description; ?>
-                    </div>
-                <?php endif; ?>
-                <a href="<?= esc_url(home_url('contact')); ?>" class="button" >
-                    <?= LanguageController::translateStaticText("Get in touch", "Contactez-nous."); ?>
-                </a>
-            </hgroup>
+    <div class="header-content-outter container">
+        <div class="header-content reveal">
+            <div class="header-content-inner slide-out-in reveal-4">
+                <hgroup class="header-title">
+                    <h1 class="title">
+                        <?= $title; ?>
+                    </h1>
+                    <?php if($description): ?>
+                        <div class="subtitle">
+                            <?= $description; ?>
+                        </div>
+                    <?php endif; ?>
+                    <a href="<?= esc_url(home_url('contact')); ?>" class="button" >
+                        <?= LanguageController::translateStaticText("Get in touch", "Contactez-nous."); ?>
+                    </a>
+                </hgroup>
+            </div>
         </div>
     </div>
 </header>

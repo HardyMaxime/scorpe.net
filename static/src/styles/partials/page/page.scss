@@ -18,6 +18,28 @@
     height: 100%;
 }
 
+.page-header .header-content-outter
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.page-header .header-content-outter::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(-100% + $containerPadding);
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: .6);
+    z-index: -1;
+}
+
 .page-header .header-content
 {
     position: relative;
@@ -33,7 +55,7 @@
     justify-content: flex-end;
     padding-right: _rem(190px);
     padding-bottom: _rem(40px);
-    padding-left:_rem(40px);
+    padding-left:_rem(10px);
     //clip-path: polygon(100% 0%, 20% 100%, 0% 100%, 100% 1000%);
     clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 80% 0%);
 }
