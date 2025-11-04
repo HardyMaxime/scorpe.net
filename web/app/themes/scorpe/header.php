@@ -7,7 +7,6 @@
         <title><?php echo get_bloginfo('name'); ?></title>
         <?php /* GERER PAR YOAST SEO <meta name="description" content="<?php echo get_bloginfo('description'); ?>"> */ ?>
         <link rel="icon" type="<?= DefaultController::getFavicon("type"); ?>" href="<?= DefaultController::getFavicon("url"); ?>" />
-        <?php site::generatePreload(); ?>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(DefaultController::generateBodyClass()); ?> >

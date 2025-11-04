@@ -3,10 +3,25 @@
 class Assets
 {
     private static $_instance; // L'attribut qui stockera l'instance unique
+    private array $manifest = [];
+    private bool $is_dev = false;
+    private string $dev_url_server = "";
 
     public function __construct()
     {
-        add_action("wp_enqueue_scripts", [$this,'add_assets_scripts']);
+        $this->is_dev = function_exists('wp_get_environment_type') 
+        ? (wp_get_environment_type() === 'development') 
+        : (defined('WP_ENV') && WP_ENV === 'development');
+
+        $this->dev_url_server = apply_filters('theme_vite_dev_server', 'http://localhost:5173/');
+
+        if (!$this->is_dev) {
+            $this->loadManifest();
+        }
+        
+        add_action("wp_enqueue_scripts", [$this,'mhdy_load_assets']);
+        add_action("wp_enqueue_scripts", [$this,'mhdy_localize_script']);
+
         add_action( 'wp_default_scripts', [$this,'remove_jquery_migrate']);
         add_filter('script_loader_tag', [$this,'add_defer_attribute'], 10, 2);
         add_action( 'wp_enqueue_scripts', [$this,'clb_custom_jquery']);
@@ -25,13 +40,8 @@ class Assets
         return self::$_instance;
     }
 
-    public function add_assets_scripts()
+    public function mhdy_localize_script()
     {
-        foreach(site::getCheminStylesAssets() as $key => $sourceStyle)
-            wp_enqueue_style($key, $sourceStyle, array(), Site::getVersion());
-        foreach(site::getCheminScriptsAssets() as $key => $sourceScript)
-            wp_enqueue_script($key, $sourceScript, array(), Site::getVersion());
-
         // Ajout du nonce pour les appels ajax
         wp_localize_script('index', 'ajax_var', array(
             'url' => admin_url('admin-ajax.php'),
@@ -52,7 +62,7 @@ class Assets
     // Ajout l'attribut Defer sur les scripts js
     public function add_defer_attribute($tag, $handle) {
         // ajouter les handles de mes scripts au array ci-dessous. Ici 3 scripts par exemple.
-        $scripts_to_defer = array('index' );
+        $scripts_to_defer = array('index', 'vite-client', 'index-dev');
         foreach($scripts_to_defer as $defer_script) {
           if ($defer_script === $handle) {
             return str_replace(' src', ' type="module" defer="defer" src', $tag);
@@ -81,6 +91,42 @@ class Assets
         if ( ! is_admin() ) {
            wp_deregister_script('jquery');
            wp_register_script('jquery', false);
+        }
+    }
+
+    private function loadManifest(): void
+    {
+        if($this->is_dev) return;
+        $path = get_template_directory() . '/assets/dist/.vite/manifest.json';
+        if (empty($path) || ! file_exists($path)) {
+            wp_die(__('Run <code>npm run build</code> in your application root!', 'fm'));
+        }
+
+        $this->manifest = json_decode(file_get_contents($path), true);
+    }
+
+    private function resolve(string $path): string
+    {
+        $url = '';
+
+        if (! empty($this->manifest["{$path}"])) {
+            $url = get_theme_file_uri('assets/dist/' . ltrim($this->manifest[$path]['file'], '/'));
+        }
+
+        return $url;
+    }
+
+    public function mhdy_load_assets()
+    {
+        if($this->is_dev)
+        {
+            wp_enqueue_script('vite-client',$this->dev_url_server. '@vite/client',[],null,true);
+            wp_enqueue_script('index-dev',$this->dev_url_server. 'scripts/main.js',[], null, true);
+        }
+        else
+        {
+            wp_enqueue_script('index', $this->resolve("scripts/main.js"), array());
+            wp_enqueue_style('style', $this->resolve("styles/main.scss"), array());
         }
     }
 }

@@ -9,9 +9,6 @@ require_once('inc/helpers.php');
 require_once('lib/post-type/PostType.php');
 require_once('lib/post-type/Taxonomy.php');
 
-// Config
-require_once('site.php');
-
 // Files
 require_once('inc/supports.php');
 require_once('inc/admin.php');
