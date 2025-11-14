@@ -69,6 +69,12 @@
 
 }
 
+.hero-background-figure img
+{
+    animation: heroBackgrounds linear 10000ms infinite;
+}
+
+
 [data-smooth]
 {
     transition: transform cubic-bezier(0.190, 1.000, 0.220, 1.000) 1.2s;
@@ -93,7 +99,6 @@
     }
 }
 
-
 @keyframes heroAppear
 {
     0%
@@ -108,6 +113,22 @@
     100%
     {
         opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes heroBackgrounds
+{
+    0%
+    {
+        transform: scale(1);
+    }
+    50%
+    {
+        transform: scale(1.05);
+    }
+    100%
+    {
         transform: scale(1);
     }
 }

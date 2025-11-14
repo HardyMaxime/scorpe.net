@@ -1,4 +1,4 @@
-$dark: #141414;
+$dark: #000000;
 $white: #FFFFFF;
 
 $background: $white;
@@ -16,14 +16,18 @@ $topbarHeight : 90px;
 $topbarHeightMobile : 90px;
 $mobileInformations : 75px;
 
-$containerPadding: 15px;
-$container: calc(1375px + ($containerPadding * 2));
-$containerFluid : calc(1640px + ($containerPadding * 2));
+$container-padding: 15px;
+$container-size: 1400px;
+$container-fluid-size : 1790px;
+$container-calc-padding: calc(50% - ($container-size / 2));
+$container-fluid-calc-padding: calc(50% - ($container-fluid-size  / 2));
 
 $fontFamily : "IBM Plex Sans", sans-serif;
 $fontFamilySecondary:"IBM Plex Sans", sans-serif;
+$font-heading : "Conthrax", sans-serif;
+
 $fontSize : 18px;
-$fontSizeMobile : 16px;
+$fontSizeMobile : 14px;
 
 $lineHeight: 1.5;
 $lineHeightMobile: $lineHeight;

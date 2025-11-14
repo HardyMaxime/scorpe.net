@@ -1,0 +1,92 @@
+.section.section-madein-france
+{
+    position: relative;
+    gap: 90px;
+    padding-top: 130px;
+}
+
+.french-flag
+{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.french-flag::before,
+.french-flag::after
+{
+    content: "";
+    flex-basis: 33%;
+    background: #002153;
+    height: 100%;
+}
+
+.french-flag::after
+{
+    background: #cf0821;
+}
+
+.section-madein-france .section-content
+{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.figure-shape
+{
+    aspect-ratio: 1/1;
+}
+
+.figure-shape.product-image-outline
+{
+    margin-bottom: 0;
+}
+
+.figure-shape.product-image-outline::after
+{
+    background: transparent;
+}
+
+@media only screen and (max-width:$tablet)
+{
+    .section.section-madein-france
+    {
+        padding-top: 70px;
+    }
+
+    .section-madein-france .section-content
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media only screen and (max-width:$mobile)
+{
+    .section.section-madein-france
+    {
+        gap: 40px;
+    }
+
+    .section-madein-france .section-content
+    {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .figure-shape
+    {
+        max-width: 540px !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

@@ -130,7 +130,7 @@ class DefaultController
      * @param string $field Nom du champ
      * @param string $id ID de la page
      */
-    public static function field_value($field, $id)
+    public static function field_value($field, $id = null)
     {
         // Si ACF est installé
         if(empty($id)) $id = get_the_ID();

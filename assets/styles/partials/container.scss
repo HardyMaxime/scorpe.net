@@ -1,0 +1,38 @@
+.container
+{
+    width: 100%;
+    padding-left: $container-calc-padding;
+    padding-right: $container-calc-padding;
+
+    @media only screen and (max-width: $container-size)
+    {
+        padding-left: $container-padding;
+        padding-right: $container-padding;
+    }
+}
+
+.container-fluid-left
+{
+    width: 100%;
+    padding-left: $container-fluid-calc-padding;
+    padding-right: 0;
+
+    @media only screen and (max-width: $container-fluid-size)
+    {
+        padding-left: $container-padding;
+        padding-right: 0;
+    }
+}
+
+.container-fluid
+{
+    width: 100%;
+    padding-left: $container-fluid-calc-padding;
+    padding-right: $container-fluid-calc-padding;
+
+    @media only screen and (max-width: $container-fluid-size)
+    {
+        padding-left: $container-padding;
+        padding-right: $container-padding;
+    }
+}

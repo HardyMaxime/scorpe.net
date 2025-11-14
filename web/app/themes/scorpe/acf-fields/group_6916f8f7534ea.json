@@ -1,9 +1,9 @@
 {
-    "key": "group_64d0b42d68372",
-    "title": "Accueil - Gestion de l'entête",
+    "key": "group_6916f8f7534ea",
+    "title": "Home - Manage Header",
     "fields": [
         {
-            "key": "field_6915de1411f96",
+            "key": "field_6916f8f75b070",
             "label": "Galerie d'image",
             "name": "header_gallery",
             "aria-label": "",
@@ -32,7 +32,7 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_6915de2e11f97",
+            "key": "field_6916f8f75b075",
             "label": "Titre principale",
             "name": "header_main_title",
             "aria-label": "",
@@ -54,7 +54,7 @@
             "delay": 0
         },
         {
-            "key": "field_6915de4411f98",
+            "key": "field_6916f8f75b079",
             "label": "Sous-titre principal",
             "name": "header_subtitle",
             "aria-label": "",
@@ -81,7 +81,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "127"
+                "value": "5"
             }
         ]
     ],
@@ -96,5 +96,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1763040873
+    "modified": 1763113350
 }

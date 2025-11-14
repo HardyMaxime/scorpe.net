@@ -7,9 +7,9 @@
 .section-online-informations
 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 90px;
-    margin-top: _rem(100px);
+    margin-top: _rem(20px);
 
     .title-with-arrow-icon
     {

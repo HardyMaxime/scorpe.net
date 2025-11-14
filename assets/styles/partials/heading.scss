@@ -1,42 +1,24 @@
+.heading-group
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .title-secondary
 {
-    @include fontSize(100px);
+    @include fontSize(60px);
     font-weight: 500;
     line-height: 1;
 
-    &.title-secondary-tiny
+    @media only screen and (max-width:$container-size)
     {
-        @include fontSize(80px);
+        @include fontSize(40px);
     }
 
-    @media only screen and (min-width:$tablet)
+    @media only screen and (max-width:$tablet)
     {
-        @include fontSize(120px);
-
-        &.title-secondary-tiny
-        {
-            @include fontSize(100px);
-        }
-    }
-
-    @media only screen and (min-width:$large)
-    {
-        @include fontSize(140px);
-
-        &.title-secondary-tiny
-        {
-            @include fontSize(120px);
-        }
-    }
-
-    @media only screen and (max-width:$mobile)
-    {
-        @include fontSize(60px);
-
-        &.title-secondary-tiny
-        {
-            @include fontSize(50px);
-        }
+        @include fontSize(26px);
     }
 }
 
@@ -49,7 +31,7 @@
 
 .section-heading
 {
-    margin-bottom: _rem(80px);
+    margin-bottom: _rem(40px);
     &.no-margin-bottom
     {
         margin-bottom: 0;

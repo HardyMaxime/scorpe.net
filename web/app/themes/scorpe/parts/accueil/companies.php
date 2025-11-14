@@ -4,7 +4,7 @@
 ?>
 <section class="section section-accueil section-group-companies section-dark" >
     <div class="section-content container">
-        <hgroup class="section-heading section-heading-row align-end reveal">
+        <hgroup class="heading-group reveal">
             <h2 class="section-heading-title title-secondary slide-out-in reveal-2">
                 <?= $companies['title']; ?>
             </h2>

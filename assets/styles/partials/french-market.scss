@@ -1,15 +1,6 @@
 .section-french-market
 {
-    border-top: solid #707070 1px;
-    margin-top: $section-mobile-padding;
-    padding-top: 70px;
-    
-    @media only screen and (min-width:$mobile)
-    {
-        margin-top: _rem(120px);
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+
 }
 
 .french-market-companies
@@ -53,10 +44,21 @@
         @include fontSize(20px);
         font-weight: 300;
 
-        @media only screen and (max-width:$container)
+        @media only screen and (max-width:$container-size)
         {
             flex-basis: 100%;
             justify-content: center;
         }
     }
+}
+
+.french-market-companies
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

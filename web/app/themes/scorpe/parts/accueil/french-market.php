@@ -3,8 +3,8 @@
 
     if(!empty($content)):
 ?>
-<div class="section-content section-french-market container">
-    <hgroup class="reveal" >
+<div class="section section-accueil section-french-market section-dark container section hr">
+    <hgroup class="heading-group text-center reveal" >
         <h2 class="title-secondary title-secondary-tiny fade-in reveal-1">
             <?= $content['title']; ?>
         </h2>
@@ -18,9 +18,6 @@
     <div class="french-market-companies ">
         <?php foreach($content['listing'] as $key => $company): ?>
             <div class="french-market-company reveal">
-                <h3 class="title-with-arrow-icon fade-in reveal-2">
-                    <?= $company['name']; ?>
-                </h3>
                 <div class="french-market-company-content reveal">
                     <div class="fade-in reveal-3" >
                         <p class="section-online-information-text" >

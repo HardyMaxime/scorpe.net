@@ -73,7 +73,7 @@ body:not(.is-scrolled).single-product .navbar-background
 {
     position: relative;
     margin-top: _rem(60px);
-    max-width: $container;
+    max-width: $container-size;
     margin-left: auto;
     margin-right: auto;
 }
@@ -86,7 +86,7 @@ body:not(.is-scrolled).single-product .navbar-background
     z-index: 100;
 }
 
-@media only screen and (max-width:$containerFluid)
+@media only screen and (max-width:$container-fluid-size)
 {
     .single-product .header-title .title
     {

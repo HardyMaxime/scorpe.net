@@ -1,9 +1,34 @@
 import { isDefined } from './helpers';
+import { Splide } from '@splidejs/splide';
 
 export function initHeader() {
     changeBackgroundMenu();
     openMenu();
     closeMenu();
+    backgroundSlider();
+}
+
+function backgroundSlider()
+{
+    const backgroundSlider = document.querySelector('.header-backgrounds');
+    if(!isDefined(backgroundSlider)) return;
+
+    const sliderBackground = new Splide( backgroundSlider, {
+        width : '100vw',
+        height: '100%',
+        waitForTransition: false,
+        pagination: false,
+        arrows: false,
+        type: 'fade',
+        rewind: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        drag: false,
+        lazyLoad: false,
+        autoplay: true,
+        interval: 5000
+    });
+    sliderBackground.mount();
 }
 
 function changeBackgroundMenu() 
