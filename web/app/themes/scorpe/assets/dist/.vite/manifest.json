@@ -1,0 +1,221 @@
+{
+  "../vite/legacy-polyfills-legacy": {
+    "file": "scripts/polyfills-legacy-BrrYRUF1.js",
+    "name": "polyfills",
+    "src": "../vite/legacy-polyfills-legacy",
+    "isEntry": true
+  },
+  "fonts/Conthrax-SemiBold.woff": {
+    "file": "fonts/Conthrax-SemiBold-D_b79zHW.woff",
+    "src": "fonts/Conthrax-SemiBold.woff"
+  },
+  "fonts/Conthrax-SemiBold.woff2": {
+    "file": "fonts/Conthrax-SemiBold-Dwznk8rR.woff2",
+    "src": "fonts/Conthrax-SemiBold.woff2"
+  },
+  "fonts/IBMPlexSans-Bold.woff": {
+    "file": "fonts/IBMPlexSans-Bold-0lNdFOLY.woff",
+    "src": "fonts/IBMPlexSans-Bold.woff"
+  },
+  "fonts/IBMPlexSans-Bold.woff2": {
+    "file": "fonts/IBMPlexSans-Bold-8djJNLol.woff2",
+    "src": "fonts/IBMPlexSans-Bold.woff2"
+  },
+  "fonts/IBMPlexSans-BoldItalic.woff": {
+    "file": "fonts/IBMPlexSans-BoldItalic-BuCJ90KS.woff",
+    "src": "fonts/IBMPlexSans-BoldItalic.woff"
+  },
+  "fonts/IBMPlexSans-BoldItalic.woff2": {
+    "file": "fonts/IBMPlexSans-BoldItalic-UYFMWuus.woff2",
+    "src": "fonts/IBMPlexSans-BoldItalic.woff2"
+  },
+  "fonts/IBMPlexSans-ExtraLight.woff": {
+    "file": "fonts/IBMPlexSans-ExtraLight-DBqp7B38.woff",
+    "src": "fonts/IBMPlexSans-ExtraLight.woff"
+  },
+  "fonts/IBMPlexSans-ExtraLight.woff2": {
+    "file": "fonts/IBMPlexSans-ExtraLight-B5is9WdJ.woff2",
+    "src": "fonts/IBMPlexSans-ExtraLight.woff2"
+  },
+  "fonts/IBMPlexSans-ExtraLightItalic.woff": {
+    "file": "fonts/IBMPlexSans-ExtraLightItalic-CV52jwld.woff",
+    "src": "fonts/IBMPlexSans-ExtraLightItalic.woff"
+  },
+  "fonts/IBMPlexSans-ExtraLightItalic.woff2": {
+    "file": "fonts/IBMPlexSans-ExtraLightItalic-DYr4MN8-.woff2",
+    "src": "fonts/IBMPlexSans-ExtraLightItalic.woff2"
+  },
+  "fonts/IBMPlexSans-Italic.woff": {
+    "file": "fonts/IBMPlexSans-Italic-DUIewC8p.woff",
+    "src": "fonts/IBMPlexSans-Italic.woff"
+  },
+  "fonts/IBMPlexSans-Italic.woff2": {
+    "file": "fonts/IBMPlexSans-Italic-DqEIgpTB.woff2",
+    "src": "fonts/IBMPlexSans-Italic.woff2"
+  },
+  "fonts/IBMPlexSans-Light.woff": {
+    "file": "fonts/IBMPlexSans-Light-BJ1NiLw8.woff",
+    "src": "fonts/IBMPlexSans-Light.woff"
+  },
+  "fonts/IBMPlexSans-Light.woff2": {
+    "file": "fonts/IBMPlexSans-Light-CT_ppYYA.woff2",
+    "src": "fonts/IBMPlexSans-Light.woff2"
+  },
+  "fonts/IBMPlexSans-LightItalic.woff": {
+    "file": "fonts/IBMPlexSans-LightItalic-CLZT-Dcy.woff",
+    "src": "fonts/IBMPlexSans-LightItalic.woff"
+  },
+  "fonts/IBMPlexSans-LightItalic.woff2": {
+    "file": "fonts/IBMPlexSans-LightItalic-drTAYLwA.woff2",
+    "src": "fonts/IBMPlexSans-LightItalic.woff2"
+  },
+  "fonts/IBMPlexSans-Medium.woff": {
+    "file": "fonts/IBMPlexSans-Medium-jTlt613L.woff",
+    "src": "fonts/IBMPlexSans-Medium.woff"
+  },
+  "fonts/IBMPlexSans-Medium.woff2": {
+    "file": "fonts/IBMPlexSans-Medium-DFv8Z_Ke.woff2",
+    "src": "fonts/IBMPlexSans-Medium.woff2"
+  },
+  "fonts/IBMPlexSans-MediumItalic.woff": {
+    "file": "fonts/IBMPlexSans-MediumItalic-DwlBVb_C.woff",
+    "src": "fonts/IBMPlexSans-MediumItalic.woff"
+  },
+  "fonts/IBMPlexSans-MediumItalic.woff2": {
+    "file": "fonts/IBMPlexSans-MediumItalic-lxPrTEPD.woff2",
+    "src": "fonts/IBMPlexSans-MediumItalic.woff2"
+  },
+  "fonts/IBMPlexSans-Regular.woff": {
+    "file": "fonts/IBMPlexSans-Regular-Dmbc5997.woff",
+    "src": "fonts/IBMPlexSans-Regular.woff"
+  },
+  "fonts/IBMPlexSans-Regular.woff2": {
+    "file": "fonts/IBMPlexSans-Regular-Dmlln0t8.woff2",
+    "src": "fonts/IBMPlexSans-Regular.woff2"
+  },
+  "fonts/IBMPlexSans-SemiBold.woff": {
+    "file": "fonts/IBMPlexSans-SemiBold-VwESjOVV.woff",
+    "src": "fonts/IBMPlexSans-SemiBold.woff"
+  },
+  "fonts/IBMPlexSans-SemiBold.woff2": {
+    "file": "fonts/IBMPlexSans-SemiBold-OJJOuvnW.woff2",
+    "src": "fonts/IBMPlexSans-SemiBold.woff2"
+  },
+  "fonts/IBMPlexSans-SemiBoldItalic.woff": {
+    "file": "fonts/IBMPlexSans-SemiBoldItalic-DrSouUAL.woff",
+    "src": "fonts/IBMPlexSans-SemiBoldItalic.woff"
+  },
+  "fonts/IBMPlexSans-SemiBoldItalic.woff2": {
+    "file": "fonts/IBMPlexSans-SemiBoldItalic-nxNmoKzs.woff2",
+    "src": "fonts/IBMPlexSans-SemiBoldItalic.woff2"
+  },
+  "fonts/IBMPlexSans-Thin.woff": {
+    "file": "fonts/IBMPlexSans-Thin-CB3L1xXg.woff",
+    "src": "fonts/IBMPlexSans-Thin.woff"
+  },
+  "fonts/IBMPlexSans-Thin.woff2": {
+    "file": "fonts/IBMPlexSans-Thin-DVh8mgpU.woff2",
+    "src": "fonts/IBMPlexSans-Thin.woff2"
+  },
+  "fonts/IBMPlexSans-ThinItalic.woff": {
+    "file": "fonts/IBMPlexSans-ThinItalic-DqCCnGNT.woff",
+    "src": "fonts/IBMPlexSans-ThinItalic.woff"
+  },
+  "fonts/IBMPlexSans-ThinItalic.woff2": {
+    "file": "fonts/IBMPlexSans-ThinItalic-f8KHOFCW.woff2",
+    "src": "fonts/IBMPlexSans-ThinItalic.woff2"
+  },
+  "scripts/main-legacy.js": {
+    "file": "scripts/main-legacy-BEY1QOXw.js",
+    "name": "main",
+    "src": "scripts/main-legacy.js",
+    "isEntry": true,
+    "imports": [
+      "styles/main-legacy.scss"
+    ]
+  },
+  "scripts/main.js": {
+    "file": "scripts/main-Bvi1O2a2.js",
+    "name": "main",
+    "src": "scripts/main.js",
+    "isEntry": true,
+    "css": [
+      "css/main-BF-CMBRc.css"
+    ],
+    "assets": [
+      "fonts/IBMPlexSans-ExtraLight-B5is9WdJ.woff2",
+      "fonts/IBMPlexSans-ExtraLight-DBqp7B38.woff",
+      "fonts/IBMPlexSans-SemiBold-OJJOuvnW.woff2",
+      "fonts/IBMPlexSans-SemiBold-VwESjOVV.woff",
+      "fonts/IBMPlexSans-Italic-DqEIgpTB.woff2",
+      "fonts/IBMPlexSans-Italic-DUIewC8p.woff",
+      "fonts/IBMPlexSans-Medium-DFv8Z_Ke.woff2",
+      "fonts/IBMPlexSans-Medium-jTlt613L.woff",
+      "fonts/IBMPlexSans-SemiBoldItalic-nxNmoKzs.woff2",
+      "fonts/IBMPlexSans-SemiBoldItalic-DrSouUAL.woff",
+      "fonts/IBMPlexSans-Regular-Dmlln0t8.woff2",
+      "fonts/IBMPlexSans-Regular-Dmbc5997.woff",
+      "fonts/IBMPlexSans-BoldItalic-UYFMWuus.woff2",
+      "fonts/IBMPlexSans-BoldItalic-BuCJ90KS.woff",
+      "fonts/IBMPlexSans-Thin-DVh8mgpU.woff2",
+      "fonts/IBMPlexSans-Thin-CB3L1xXg.woff",
+      "fonts/IBMPlexSans-MediumItalic-lxPrTEPD.woff2",
+      "fonts/IBMPlexSans-MediumItalic-DwlBVb_C.woff",
+      "fonts/IBMPlexSans-Bold-8djJNLol.woff2",
+      "fonts/IBMPlexSans-Bold-0lNdFOLY.woff",
+      "fonts/IBMPlexSans-ThinItalic-f8KHOFCW.woff2",
+      "fonts/IBMPlexSans-ThinItalic-DqCCnGNT.woff",
+      "fonts/IBMPlexSans-ExtraLightItalic-DYr4MN8-.woff2",
+      "fonts/IBMPlexSans-ExtraLightItalic-CV52jwld.woff",
+      "fonts/IBMPlexSans-Light-CT_ppYYA.woff2",
+      "fonts/IBMPlexSans-Light-BJ1NiLw8.woff",
+      "fonts/IBMPlexSans-LightItalic-drTAYLwA.woff2",
+      "fonts/IBMPlexSans-LightItalic-CLZT-Dcy.woff",
+      "fonts/Conthrax-SemiBold-Dwznk8rR.woff2",
+      "fonts/Conthrax-SemiBold-D_b79zHW.woff"
+    ]
+  },
+  "styles/main-legacy.scss": {
+    "file": "scripts/main-legacy-DuKIiQzN.js",
+    "name": "main",
+    "src": "styles/main-legacy.scss",
+    "isEntry": true,
+    "assets": [
+      "fonts/IBMPlexSans-ExtraLight-B5is9WdJ.woff2",
+      "fonts/IBMPlexSans-ExtraLight-DBqp7B38.woff",
+      "fonts/IBMPlexSans-SemiBold-OJJOuvnW.woff2",
+      "fonts/IBMPlexSans-SemiBold-VwESjOVV.woff",
+      "fonts/IBMPlexSans-Italic-DqEIgpTB.woff2",
+      "fonts/IBMPlexSans-Italic-DUIewC8p.woff",
+      "fonts/IBMPlexSans-Medium-DFv8Z_Ke.woff2",
+      "fonts/IBMPlexSans-Medium-jTlt613L.woff",
+      "fonts/IBMPlexSans-SemiBoldItalic-nxNmoKzs.woff2",
+      "fonts/IBMPlexSans-SemiBoldItalic-DrSouUAL.woff",
+      "fonts/IBMPlexSans-Regular-Dmlln0t8.woff2",
+      "fonts/IBMPlexSans-Regular-Dmbc5997.woff",
+      "fonts/IBMPlexSans-BoldItalic-UYFMWuus.woff2",
+      "fonts/IBMPlexSans-BoldItalic-BuCJ90KS.woff",
+      "fonts/IBMPlexSans-Thin-DVh8mgpU.woff2",
+      "fonts/IBMPlexSans-Thin-CB3L1xXg.woff",
+      "fonts/IBMPlexSans-MediumItalic-lxPrTEPD.woff2",
+      "fonts/IBMPlexSans-MediumItalic-DwlBVb_C.woff",
+      "fonts/IBMPlexSans-Bold-8djJNLol.woff2",
+      "fonts/IBMPlexSans-Bold-0lNdFOLY.woff",
+      "fonts/IBMPlexSans-ThinItalic-f8KHOFCW.woff2",
+      "fonts/IBMPlexSans-ThinItalic-DqCCnGNT.woff",
+      "fonts/IBMPlexSans-ExtraLightItalic-DYr4MN8-.woff2",
+      "fonts/IBMPlexSans-ExtraLightItalic-CV52jwld.woff",
+      "fonts/IBMPlexSans-Light-CT_ppYYA.woff2",
+      "fonts/IBMPlexSans-Light-BJ1NiLw8.woff",
+      "fonts/IBMPlexSans-LightItalic-drTAYLwA.woff2",
+      "fonts/IBMPlexSans-LightItalic-CLZT-Dcy.woff",
+      "fonts/Conthrax-SemiBold-Dwznk8rR.woff2",
+      "fonts/Conthrax-SemiBold-D_b79zHW.woff"
+    ]
+  },
+  "styles/main.scss": {
+    "file": "css/main-BF-CMBRc.css",
+    "src": "styles/main.scss",
+    "isEntry": true
+  }
+}
