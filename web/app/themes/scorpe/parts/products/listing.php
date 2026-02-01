@@ -2,22 +2,23 @@
     $products = $args['products'];
 ?>
 <section class="product-listing">
-    <?php while($products->have_posts()): $products->the_post(); 
-    $thumb_url = ProductController::getProductThumbnails(get_the_ID(), "url", "listing");
+    <?php while($products->have_posts()): $products->the_post();
+        $thumb = ProductController::getProductThumbnails(get_the_ID(), null, "listing");
+        $variations = ProductController::getVariations(get_the_ID());
+        if(!$variations):
     ?>
-    <a href="<?= esc_url(get_the_permalink()); ?>" class="product-listing-item" >
-        <figure class="product-listing-item-figure product-image-outline" >
-            <?php if(!empty($thumb_url)): ?>
-                <img src="<?= esc_url($thumb_url); ?>"
-                    width="330" height="200" alt="<?= esc_attr(ProductController::getProductThumbnails(get_the_id(), "alt")); ?>" loading="lazy" />
-            <?php else: ?>
-                <img src="<?= esc_url(ProductController::getDefautThumb()); ?>" 
-                    width="330" height="200" alt="<?= "Scorpe Technologies - " . esc_attr(get_the_title()); ?>" loading="lazy" />
-            <?php endif; ?>
-        </figure>
-        <h3 class="product-name link-with-arrow">
-            <?= esc_html(get_the_title()); ?>
-        </h3>
-    </a>
-    <?php endwhile; ?>
+        <?php get_template_part("parts/products/listing_item", null, [
+            "thumb" => $thumb,
+            "title" => get_the_title()
+        ]); ?>
+    <?php else: ?>
+        <?php foreach($variations as $variation): 
+                $infos = ProductController::getVariationInfos(get_the_ID(),$variation['id']);
+            ?>
+            <?php get_template_part("parts/products/listing_item", null, [
+                "thumb" => $infos['image'],
+                "title" => $infos['name']
+            ]); ?>
+        <?php endforeach; ?>
+    <?php endif; endwhile; ?>
 </section>

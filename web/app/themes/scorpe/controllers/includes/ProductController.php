@@ -247,7 +247,7 @@ class ProductController
      * @param string $id ID du produit
      * @param bool $onlyFirst Si on veut récupérer uniquement la première image
      */
-    public static function getProductThumbnails(string $id, string $param = "", ?string $size = ""): array|string
+    public static function getProductThumbnails(string $id, ?string $param = "", ?string $size = ""): array|string
     {
         //$images = DefaultController::field_value('product_preview_listing', $id);
         $images = DefaultController::getPostThumbnail($id, null, false, $size) ?: false;
@@ -487,5 +487,32 @@ class ProductController
 
         if(!empty($param) && array_key_exists($param, $images)) return $images[$param];
         return $images;
+    }
+
+    public static function getVariations(int $product_id, ?string $variation_id = null): ?array
+    {
+        $variations = DefaultController::field_value("product-variations", $product_id);
+        if (empty($variations)) {
+            return null;
+        }
+
+        if($variation_id !== null)
+        {
+            $variation = array_filter($variations, function($var) use ($variation_id) {
+                return $var['id'] === $variation_id;
+            });
+            return !empty($variation) ? reset($variation) : null;
+        }
+        return $variations;
+    }
+
+    public static function getVariationInfos(int $product_id, string $variation_id): array
+    {
+        $variation = self::getVariations($product_id, $variation_id);
+        if(isset($variation['image']) && empty($variation['image']))
+        {
+            $variation['image'] = self::getProductThumbnails($product_id, null, "listing");
+        }
+        return $variation ?? [];
     }
 }
