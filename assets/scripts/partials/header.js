@@ -17,7 +17,7 @@ function backgroundSlider()
         width : '100vw',
         height: '100%',
         waitForTransition: false,
-        pagination: false,
+        pagination: true,
         arrows: false,
         type: 'fade',
         rewind: true,

@@ -1,0 +1,35 @@
+# Prod : domaine.com
+# Dev  : localhost ou :80
+http://:80  {
+    root * /var/www/web
+
+    encode zstd gzip
+
+    log {
+        output file /var/log/caddy/access.log
+        format json
+    }
+
+    header {
+        X-Content-Type-Options nosniff
+        X-Frame-Options SAMEORIGIN
+        Referrer-Policy strict-origin-when-cross-origin
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        -Server
+    }
+
+    # Bloquer fichiers sensibles
+    @blocked path /.env /.git/* /composer.json /composer.lock
+    respond @blocked 403
+
+    # Bloquer fichiers WP sensibles
+    @wpblocked path /wp-config.php /xmlrpc.php /.user.ini
+    respond @wpblocked 403
+
+    # Cache assets statiques
+    @static path *.css *.js *.ico *.gif *.jpg *.jpeg *.png *.svg *.woff *.woff2
+    header @static Cache-Control "public, max-age=31536000, immutable"
+
+    php_server
+    file_server
+}

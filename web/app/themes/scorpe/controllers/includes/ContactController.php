@@ -51,6 +51,10 @@ class ContactController
     {
         $contactInfos = DefaultController::field_value("contact_infos", "option");
 
+        if(!is_array($contactInfos)) {
+            return false;
+        }
+
         if(!empty($params) && array_key_exists($params, $contactInfos))
         {
             return $contactInfos[$params];
@@ -74,6 +78,10 @@ class ContactController
 
         $content = LanguageController::get_field_value_by_context('contact_background', $contactID);
 
+        if(!is_array($content)) {
+            return false;
+        }
+
         if(!empty($params) && array_key_exists($params, $content))
         {
             return $content[$params];
@@ -95,6 +103,10 @@ class ContactController
         }
 
         $content = LanguageController::get_field_value_by_context('contact_keywords', $contactID);
+
+        if(!is_array($content)) {
+            return false;
+        }
 
         if(!empty($params) && array_key_exists($params, $content))
         {

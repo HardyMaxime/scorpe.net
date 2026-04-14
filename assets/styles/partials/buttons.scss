@@ -142,3 +142,31 @@
         }
     }
 }
+
+.badges
+{
+    position: relative;
+    color: $primary;
+    display: inline-flex;
+    align-self: flex-start;
+    text-transform: uppercase;
+    font-family: $font-heading;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/*
+.badges::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $primary;
+    width: 100%;
+    height: 100%;
+    transform: skew(10deg);
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+*/

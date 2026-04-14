@@ -1,0 +1,59 @@
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: app
+    restart: always
+    volumes:
+      - .:/var/www
+      - ./web/app/uploads:/var/www/web/app/uploads
+    ports:
+      - "8000:80"
+    networks:
+      - app-network
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: default
+      MYSQL_ROOT_PASSWORD: rootroot
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - app-network
+
+  adminer:
+    image: adminer:latest
+    restart: always
+    depends_on:
+      - db
+    environment:
+      APP_ENV: dev
+      PMA_HOST: mysql
+    ports:
+      - "8082:8080"
+    networks:
+      - app-network
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    platform: linux/amd64
+    logging:
+      driver: 'none'
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - app-network
+
+volumes:
+  db-data:
+
+networks:
+  app-network:

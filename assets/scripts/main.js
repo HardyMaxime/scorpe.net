@@ -6,7 +6,7 @@ import { initHeader } from './partials/header';
 import { initCompanies } from './partials/companies';
 import { initService } from './partials/service';
 import { initProduct } from './partials/product';
-import { initCookieConsent } from './partials/cookie-consent';
+//import { initCookieConsent } from './partials/cookie-consent';
 import { initSearch } from './partials/search';
 import { initGallery } from './partials/gallery';
 import { initHeroParallax } from './partials/hero-parallax';
@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', function() {
     initCompanies();
     initService();
     initProduct();
-    initCookieConsent();
+    //initCookieConsent();
     initSearch();
     initGallery();
     clipBoard();

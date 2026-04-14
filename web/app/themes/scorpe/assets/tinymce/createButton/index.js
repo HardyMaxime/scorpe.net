@@ -43,7 +43,7 @@
                         }
                       ],
                     onsubmit: function(e){
-                        var returnText = '<a href='+ e.data.url +' class="link-with-arrow" target="_blank" rel="noopener" >'+ e.data.name +'</a>';
+                        var returnText = '<a href='+ e.data.url +' class="button" target="_blank" rel="noopener" >'+ e.data.name +'</a>';
                         ed.execCommand('mceInsertContent', 0, returnText);
                       }
                 });

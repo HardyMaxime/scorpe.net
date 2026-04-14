@@ -1,0 +1,37 @@
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: app
+    container_name: scorpe
+    restart: always
+    depends_on:
+      - db
+    volumes:
+      - ./web/app/uploads:/var/www/web/app/uploads
+    networks:
+      - web
+
+  db:
+    image: mysql:8.0
+    container_name: scorpe-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
+    name: srv_web
+
+volumes:
+  db_data:
