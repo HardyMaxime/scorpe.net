@@ -1,3 +1,5 @@
+@import "archive-page.scss";
+
 .page-header.header
 {
     position: relative;
@@ -119,6 +121,13 @@
     text-align: center;
     @include fontSize(22px);
     line-height: 1;
+}
+
+.button
+{
+    font-size: 1rem;
+    padding-left: _rem(30px);
+    padding-right: _rem(30px);
 }
 
 .button.center

@@ -515,4 +515,9 @@ class ProductController
         }
         return $variation ?? [];
     }
+
+    public static function isNewProduct(int $product_id): bool
+    {
+        return DefaultController::field_value('is-new', $product_id) ?? false;
+    }
 }

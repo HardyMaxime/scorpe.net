@@ -8,7 +8,7 @@
             <?= $content['description']; ?>
         </p>
     </hgroup>
-    <?php get_template_part('parts/products/categories', null, array('current_url' => LanguageController::getProductURL())); ?>
+    <?php get_template_part('parts/page/card/teaser', null, array('current_url' => LanguageController::getProductURL())); ?>
     <a href="<?= esc_url(home_url('contact')); ?>" class="button center" >
         <?= LanguageController::translateStaticText("Get in touch", "Contactez-nous."); ?>
     </a>

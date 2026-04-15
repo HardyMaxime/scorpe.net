@@ -3,6 +3,28 @@
     "title": "Contenu du produit",
     "fields": [
         {
+            "key": "field_69df876a2da2c",
+            "label": "Afficher le badge \"New\" \/ \"Nouveau\"",
+            "name": "is-new",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_64c7838514724",
             "label": "Description",
             "name": "",
@@ -18,7 +40,8 @@
             },
             "relevanssi_exclude": 0,
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_64c782bfd1484",
@@ -55,7 +78,8 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_64c78321d1487",
@@ -73,9 +97,10 @@
             },
             "relevanssi_exclude": 0,
             "default_value": "",
+            "allow_in_bindings": 1,
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 0,
+            "media_upload": 1,
             "delay": 0
         },
         {
@@ -176,7 +201,8 @@
                 "id": ""
             },
             "placement": "left",
-            "endpoint": 0
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_64c78343d1488",
@@ -217,5 +243,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710416166
+    "display_title": "",
+    "modified": 1776256912
 }

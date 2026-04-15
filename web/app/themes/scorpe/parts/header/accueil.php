@@ -16,10 +16,10 @@
                                 loading="lazy" />
                         </figure>
                         <div class="header-backgrounds-content container" >
-                            <?php if($surtitle): ?>
-                                <p class="badges" ><?= ($surtitle); ?></p>
-                            <?php endif; ?>
                             <hgroup class="header-group-title" >
+                                <?php if($surtitle): ?>
+                                    <p class="header-backgrounds-surtitle" ><?= ($surtitle); ?></p>
+                                <?php endif; ?>
                                 <?php if($index === 0): ?>
                                     <h1 class="header-backgrounds-title header-title" ><?= ($title); ?></h1>
                                 <?php else: ?>

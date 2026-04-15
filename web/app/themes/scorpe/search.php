@@ -21,7 +21,9 @@
         <?php if (have_posts()): ?>
             <section class="section-search-content">
                 <div class="product-listing">
-                    <?php while (have_posts()) : the_post(); ?>
+                    <?php while (have_posts()) : the_post(); 
+                        $is_new = ProductController::isNewProduct(get_the_ID());
+                    ?>
                         <a href="<?= get_the_permalink(); ?>" class="product-listing-item">
                             <?php if(ProductController::getProductThumbnails(get_the_ID(), true)): ?>
                                 <img src="<?= esc_url(ProductController::getProductThumbnails(get_the_ID(), "url")); ?>" 
@@ -29,6 +31,11 @@
                             <?php else: ?>
                                 <img src="<?= esc_url(ProductController::getDefautThumb()); ?>" 
                                     width="330" height="200" alt="<?= "Scorpe Technologies - " . esc_attr(get_the_title()); ?>" loading="lazy" />
+                            <?php endif; ?>
+                            <?php if($is_new): ?>
+                                <span class="badges">
+                                    <?= LanguageController::translateStaticText("New", "Nouveau"); ?>
+                                </span>
                             <?php endif; ?>
                             <h3 class="product-name link-with-arrow">
                                 <?= esc_html(get_the_title()); ?>

@@ -19,6 +19,7 @@
             </p>
         <?php endif; ?>
     </hgroup>
+
     <?php if(!empty($focus_image)): ?>
         <div class="section-content">
             <figure class="section-focus-product-image">

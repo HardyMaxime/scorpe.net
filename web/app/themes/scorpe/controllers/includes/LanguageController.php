@@ -155,4 +155,14 @@ class LanguageController
         }
         return esc_url(get_permalink(140));
     }
+
+    public static function getNewsURL()
+    {
+        $current_lg = self::currentLanguage();
+        if($current_lg === 'en')
+        {
+            return esc_url(get_permalink(4056));
+        }
+        return esc_url(get_permalink(4039));
+    }
 }

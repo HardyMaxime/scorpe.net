@@ -146,16 +146,16 @@
 .badges
 {
     position: relative;
-    color: $primary;
+    color: $white;
     display: inline-flex;
     align-self: flex-start;
     text-transform: uppercase;
-    font-family: $font-heading;
     font-size: 1.1rem;
+    font-weight: 600;
+    padding: 5px 22px;
     text-align: center;
 }
 
-/*
 .badges::before
 {
     content: "";
@@ -169,4 +169,12 @@
     z-index: -1;
     transition: background 0.3s ease;
 }
-*/
+
+.floating.badges
+{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+}

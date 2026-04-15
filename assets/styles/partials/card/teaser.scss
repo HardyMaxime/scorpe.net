@@ -1,0 +1,156 @@
+.teaser-cards
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.teaser-card
+{
+    position: relative;
+    aspect-ratio: 2/2.5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.teaser-card-image
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.teaser-card-image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.teaser-card-content
+{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    z-index: 2;
+}
+
+.teaser-card-title
+{
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.teaser-card > .teaser-card-title
+{
+    padding-bottom: 20px;
+    transition-delay: 0.3s;
+}
+
+.teaser-card:hover > .teaser-card-title
+{
+    opacity: 0;
+    transition-delay: 0;
+}
+
+.teaser-card:hover::before
+{
+    transform: translateY(0%);
+}
+
+.teaser-card::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.39) 15%, rgba(0, 0, 0, 1) 100%);
+    z-index: 1;
+    transform: translateY(70%);
+    transition: transform 0.6s ease;
+}
+
+.teaser-card-list
+{
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.teaser-card-content
+{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    ruby-overhang: 0;
+    z-index: 10;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.teaser-card:hover .teaser-card-content
+{
+    transform: translateY(0);
+}
+
+.teaser-card-list-item
+{
+    width: 100%;
+    justify-content: space-between;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    background-color:#000000;
+}
+
+.teaser-card-list-item a
+{
+    width: 100%;
+    padding: 1rem;
+}
+
+.teaser-card-list > :nth-child(2n)
+{
+  background: #141414;
+}
+
+@media only screen and (max-width:1450px)
+{
+    .teaser-cards
+    {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width:$mobile)
+{
+    .teaser-cards
+    {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}

@@ -9,6 +9,9 @@
             <img src="<?= esc_url($logo_white['url']); ?>" class="light-logo" width="180" height="30" loading="lazy" alt="<?= esc_attr(LanguageController::getImageAlt($logo_white)); ?>">
         </a>
         <div class="navbar-controls">
+            <a href="<?= esc_url(LanguageController::getNewsURL()); ?>" class="button tiny hide-max-mobile">
+                <?= LanguageController::translateStaticText("What's new in 2026", "Nouveautés 2026") ?>
+            </a>
             <div class="navbar-control navbar-control-search hide-max-mobile">
                 <button type="button" class="navigation-link navbar-search-button open-search" arial-label="Open search">
                     <span>Open search bar</span>
