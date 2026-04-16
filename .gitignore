@@ -64,3 +64,9 @@ wp-cli.local.yml
 dump.sql
 maquette
 maquette/*
+
+# Vidéos
+*.mp4
+*.mov
+*.avi
+*.webm
