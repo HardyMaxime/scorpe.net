@@ -257,6 +257,18 @@ figure.no-padding
     }
 }
 
+@for $i from 1 through 10 {
+    .pt-#{$i} {
+      padding-top: $i * 10px;
+    }
+}
+
+@for $i from 1 through 10 {
+    .pb-#{$i} {
+      padding-bottom: $i * 10px;
+    }
+}
+
 @media only screen and (max-width: $mobile)
 {
     .text-justify,

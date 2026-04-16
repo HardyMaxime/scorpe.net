@@ -11,18 +11,6 @@
         "class_title" => ['no-margin-bottom'],
         "class_subtitle" => [""],
 )); ?>
-<section class="section-page section container section-white overflow-x">
-    <?php get_template_part('parts/products/categories', null, array('term_id' => $term_id)); ?>
-    <?php if($products->have_posts()): ?>
-        <?php get_template_part("parts/products/listing", null, array('products' => $products)); ?>
-        <?php
-            DefaultController::clbs_pagination($paged);
-            DefaultController::resetWpQuery($tmp_query);
-            wp_reset_postdata();
-        ?>
-    <?php else: ?>
-        <section class="no-result">
-            <?= LanguageController::translateStaticText("No product found", "Aucun produit trouvé"); ?>
-        </section>
-    <?php endif; ?>
+<section class="section section-categories section-dark container-fluid pt-5 pb-5" id="products">
+    <?php get_template_part('parts/page/card/teaser', null, array('current_url' => LanguageController::getProductURL())); ?>
 </section>

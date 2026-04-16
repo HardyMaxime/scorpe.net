@@ -10,6 +10,7 @@ import { initProduct } from './partials/product';
 import { initSearch } from './partials/search';
 import { initGallery } from './partials/gallery';
 import { initHeroParallax } from './partials/hero-parallax';
+import { initFocusVideo } from './partials/focus-video';
 import GLightbox from 'glightbox';
 import { isDefined } from './partials/helpers';
 
@@ -32,6 +33,7 @@ window.addEventListener('DOMContentLoaded', function() {
     //initCookieConsent();
     initSearch();
     initGallery();
+    initFocusVideo();
     clipBoard();
 
     if (window.matchMedia("(min-width: 999px)").matches) {
