@@ -51,14 +51,17 @@ get_header(); ?>
                 $first_image = !empty($images) ? $images[0] : null;
             ?>
             <article class="archive-listing-item reveal">
-                <?php if ($first_image) : ?>
-                <figure class="archive-listing-item-image fade-in reveal-2">
-                    <img src="<?php echo esc_url($first_image['url']); ?>"
-                         alt="<?php echo esc_attr($first_image['alt']); ?>"
-                         width="<?php echo esc_attr($first_image['width']); ?>"
-                         height="<?php echo esc_attr($first_image['height']); ?>"
+                <?php if (!empty($images)) : ?>
+                <figure class="archive-listing-item-image fade-in reveal-2" style="--slide-count: <?php echo count($images); ?>">
+                    <?php foreach ($images as $i => $image) : ?>
+                    <img src="<?php echo esc_url($image['url']); ?>"
+                         alt="<?php echo esc_attr($image['alt']); ?>"
+                         width="<?php echo esc_attr($image['width']); ?>"
+                         height="<?php echo esc_attr($image['height']); ?>"
                          loading="lazy"
-                         class="cover" />
+                         class="cover"
+                         style="--slide-index: <?php echo $i; ?>" />
+                    <?php endforeach; ?>
                 </figure>
                 <?php endif; ?>
                 <div class="archive-listing-item-content reveal-translate reveal-3">

@@ -111,6 +111,26 @@ body.page-template-template-news
     clip-path: polygon(10% 0%, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%);
     aspect-ratio: 670/500;
     background-color: #d4d5e2;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        animation: image-fade calc(var(--slide-count, 1) * 5s) ease-in-out infinite;
+        animation-delay: calc(var(--slide-index, 0) * 5s);
+
+        &:only-child {
+            opacity: 1;
+            animation: none;
+        }
+    }
+}
+
+@keyframes image-fade {
+    0%, 100% { opacity: 0; }
+    15%, 85% { opacity: 1; }
 }
 
 .archive-listing-item:nth-child(2n) {
