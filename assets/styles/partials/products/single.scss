@@ -14,7 +14,7 @@ body:not(.is-scrolled).single-product .navbar-background
     width: 100%;
     //height: 980px;
     min-height: 590px;
-    height: 45vw;
+    height: 100vh;
 }
 
 .single-product .header-background
@@ -24,10 +24,17 @@ body:not(.is-scrolled).single-product .navbar-background
     height: 100%;
 }
 
+/*
 .single-product .header-content
 {
     padding-bottom: _rem(80px);
     height:  calc(100% - $topbarHeight);
+}
+*/
+
+.single-product .header-content
+{
+    width: 100%;
 }
 
 .single-product .header-title .title
