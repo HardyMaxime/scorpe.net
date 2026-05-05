@@ -146,6 +146,12 @@
     a{ justify-content: center; }
 }
 
+.single-product .product-preview
+{
+    padding-top: _rem(90px);
+    padding-bottom: _rem(90px);
+}
+
 @media only screen and (max-width: $tablet) 
 {
     .page-product {
@@ -160,13 +166,6 @@
         gap: $section-mobile-padding;
         margin-top: 0;
         padding-bottom: 0;
-    }
-
-    .product-preview {
-        max-width: 720px;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .accessories-thumbs {

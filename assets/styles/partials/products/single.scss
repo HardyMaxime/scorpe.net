@@ -44,38 +44,6 @@ body:not(.is-scrolled).single-product .navbar-background
     line-height: 1;
 }
 
-.product-preview
-{
-    display: flex;
-    flex-direction: column;
-    gap: _rem(60px);
-    margin-bottom: _rem(80px);
-}
-
-.product-preview .button
-{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.product-preview .product-description
-{
-    font-weight: 700;
-    @include fontSize(30px);
-    text-align: center;
-}
-
-.product-preview .product-preview-image
-{
-    max-width: 980px;
-    object-fit: contain;
-    max-height: 380px;
-    width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .product-video-wrapper
 {
     position: relative;
@@ -91,6 +59,44 @@ body:not(.is-scrolled).single-product .navbar-background
     bottom: 0;
     left: 0;
     z-index: 100;
+}
+
+.section-media .splide__arrows
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3px;
+    z-index: 100;
+}
+
+.section-media .splide__arrow
+{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(0);
+    background: transparent;
+    opacity: 1;
+    border-radius: 0;
+    width: 60px;
+    svg{ fill: #fff;}
+}
+
+.splide__arrow::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    z-index: -1;
+    transform: skewX(-20deg)
 }
 
 @media only screen and (max-width:$container-fluid-size)
@@ -133,5 +139,21 @@ body:not(.is-scrolled).single-product .navbar-background
         gap: 0;
         margin-top: 0;
         padding-bottom: 0;
+    }
+
+    .single-product .product-preview
+    {
+        margin-bottom: 0;
+        padding-bottom: 40px;
+    }
+
+    .product-preview a
+    {
+        display: block;
+
+        & + a
+        {
+            margin-top: 15px;
+        }
     }
 }

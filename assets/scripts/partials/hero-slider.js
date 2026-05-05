@@ -8,15 +8,17 @@ export function initHeroSlider() {
 
 function initFigureSlider()
 {
-    const slider = document.querySelector('.section-contect-figure');
+    const slider = document.querySelector('.section-content-figure');
     if(!isDefined(slider)) return;
+
+    const hasArrows = isDefined(slider.querySelector('.splide__arrows'));
 
     const slider_figure = new Splide( slider, {
         width : '100%',
         height: '100%',
         waitForTransition: false,
         pagination: false,
-        arrows: false,
+        arrows: hasArrows,
         rewind: true,
         pauseOnHover: false,
         pauseOnFocus: false,

@@ -1,8 +1,36 @@
-.heading-group
+.heading-group,
+.heading
 {
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.heading
+{
+    gap: 10px;
+}
+
+.heading .title
+{
+    font-weight: 500;
+    font-family: $font-heading;
+    line-height: 1;
+    @include fontSize(50px);
+}
+
+.heading.separator
+{
+    position: relative;
+    &::after
+    {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: $primary;
+        margin-top: 10px;
+    }
 }
 
 .title-secondary
@@ -148,8 +176,22 @@
     }
 }
 
+@media only screen and (max-width:$tablet)
+{
+    .heading .title
+    {
+        @include fontSize(30px);
+    }
+}
+
 @media only screen and (max-width:$mobile)
 {
+    .heading.separator::after
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .title-secondary
     {
         @include fontSize(40px);

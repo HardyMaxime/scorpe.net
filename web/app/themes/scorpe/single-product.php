@@ -5,10 +5,10 @@
     $hasVideo = (!empty(ProductController::hasVideo(get_the_ID())) ?? false);
 ?>
 <?php get_template_part("parts/products/header"); ?>
-<section class="section section-page section-content container overflow-x no-padding-top">
-    <section class="section-content">
-        <?php get_template_part("parts/products/preview"); ?>
-        <section class="product-details-wrapper">
+<section class="section section-page overflow-x no-padding-top">
+    <?php get_template_part("parts/products/preview"); ?>
+    <section class="section-content container">
+        <section class="product-details-wrapper" id="details">
             <?php get_template_part('parts/products/content'); ?>
         </section>
         <section class="product-contact">

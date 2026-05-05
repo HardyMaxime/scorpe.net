@@ -15,7 +15,7 @@
             <?= DefaultController::field_value("FR_madein_france_content"); ?>
         </div>
         <?php if($gallery): ?>
-            <div class="section-contect-figure figure-shape product-image-outline splide strech-slider">
+            <div class="section-content-figure figure-shape product-image-outline splide strech-slider">
                 <div class="splide__track">
                     <div class="splide__list">
                         <?php foreach($gallery as $key => $image): ?>

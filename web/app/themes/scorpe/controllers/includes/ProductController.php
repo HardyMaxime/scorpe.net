@@ -278,6 +278,34 @@ class ProductController
         return $content;
     }
 
+    public static function getProductGallery(string $id): array|bool
+    {
+        $gallery = DefaultController::field_value("product_gallery", $id);
+        if(!empty($gallery))
+        {
+            return $gallery;
+        }
+        //$gallery[0] = self::getProductThumbnails($id, null, "product"); // Précharge l'image à la une du produit dans la galerie pour éviter les problèmes de chargement de l'image à la une dans le slider
+        $gallery = [];
+        $gallery[0]['url']= ProductController::getProductBanner(get_the_ID(), "background");
+        $gallery[0]['alt']= get_the_title($id);
+        return $gallery;
+    }
+
+    public static function getPreviewContent(string $id, string $param = ""): array|string
+    {
+        $heading = [];
+        $heading['title'] = DefaultController::field_value('preview_title', $id) ?: get_the_title($id);
+        $heading['description'] = DefaultController::field_value('preview_description', $id) ?: "";
+
+        if(!empty($param) && array_key_exists($param, $heading))
+        {
+            return $heading[$param];
+        }
+
+        return $heading;
+    }
+
     public static function getProductAccessories(string $id): array|bool
     {
         $accessories = DefaultController::field_value('product_accessorie', $id);
