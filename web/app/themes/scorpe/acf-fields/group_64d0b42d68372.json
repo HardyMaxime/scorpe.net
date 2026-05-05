@@ -25,6 +25,28 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_69f9aa0bc3d69",
+                            "label": "Label caroussel",
+                            "name": "label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "relevanssi_exclude": 0,
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
                             "key": "field_69ddee99576a4",
                             "label": "Surtitre",
                             "name": "surtitle",
@@ -148,5 +170,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1776417248
+    "modified": 1777969698
 }

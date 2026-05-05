@@ -16,7 +16,9 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
+                <?php if(count($product_gallery) > 1): ?>
                 <div class="splide__arrows"></div>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
         <div class="section-content">

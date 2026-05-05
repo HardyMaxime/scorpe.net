@@ -32,7 +32,18 @@
                 <?php $index++; endwhile; ?>
             </div>
         </div>
-        <ul class="splide__pagination"></ul>
     </section>
+    <ul id="header-slider-pagination" class="header-slider-pagination container reset-list">
+        <?php $slide_index = 0; while(have_rows("home_header", get_the_ID())): the_row();
+            $slide_name = get_sub_field("label") ?: "Slide " . ($slide_index + 1);
+        ?>
+        <li class="header-slider-pagination-item" role="button" data-index="<?= $slide_index; ?>">
+            <div class="header-slider-pagination-item-progress">
+                <div class="header-slider-pagination-item-progress-bar"></div>
+            </div>
+            <?= esc_html($slide_name); ?>
+        </li>
+        <?php $slide_index++; endwhile; ?>
+    </ul>
     <?php endif; ?>
 </header>

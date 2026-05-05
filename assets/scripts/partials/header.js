@@ -17,7 +17,7 @@ function backgroundSlider()
         width : '100vw',
         height: '100%',
         waitForTransition: false,
-        pagination: true,
+        pagination: false,
         arrows: false,
         type: 'fade',
         rewind: true,
@@ -28,7 +28,40 @@ function backgroundSlider()
         autoplay: true,
         interval: 5000
     });
+
+    managePagination(sliderBackground);
     sliderBackground.mount();
+}
+
+function managePagination(splide)
+{
+    const items = document.querySelectorAll('.header-slider-pagination-item');
+    const bars = document.querySelectorAll('.header-slider-pagination-item-progress-bar');
+
+    if (!items.length) return;
+
+    items.forEach(function(item, i) {
+        item.addEventListener('click', function() {
+            splide.go(i);
+        });
+    });
+
+    splide.on('mounted move', function() {
+        const index = splide.index;
+        items.forEach(function(item, i) {
+            item.classList.toggle('is-active', i === index);
+        });
+        bars.forEach(function(bar) {
+            bar.style.width = '0%';
+        });
+    });
+
+    splide.on('autoplay:playing', function(rate) {
+        const activeBar = bars[splide.index];
+        if (activeBar) {
+            activeBar.style.width = (rate * 100) + '%';
+        }
+    });
 }
 
 function changeBackgroundMenu() 
