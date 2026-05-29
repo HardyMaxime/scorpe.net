@@ -126,7 +126,7 @@
     "src": "fonts/IBMPlexSans-ThinItalic.woff2"
   },
   "scripts/main-legacy.js": {
-    "file": "scripts/main-legacy-ChqIKFla.js",
+    "file": "scripts/main-legacy-DDa1Ivfi.js",
     "name": "main",
     "src": "scripts/main-legacy.js",
     "isEntry": true,
@@ -135,12 +135,12 @@
     ]
   },
   "scripts/main.js": {
-    "file": "scripts/main-kYYUm7bY.js",
+    "file": "scripts/main-CUf94Cei.js",
     "name": "main",
     "src": "scripts/main.js",
     "isEntry": true,
     "css": [
-      "css/main-ZjzpLn9z.css"
+      "css/main-DVZKRzfb.css"
     ],
     "assets": [
       "fonts/IBMPlexSans-ExtraLight-B5is9WdJ.woff2",
@@ -176,7 +176,7 @@
     ]
   },
   "styles/main-legacy.scss": {
-    "file": "scripts/main-legacy-Dmfl7Tj1.js",
+    "file": "scripts/main-legacy-B-rbZJU5.js",
     "name": "main",
     "src": "styles/main-legacy.scss",
     "isEntry": true,
@@ -214,7 +214,7 @@
     ]
   },
   "styles/main.scss": {
-    "file": "css/main-ZjzpLn9z.css",
+    "file": "css/main-DVZKRzfb.css",
     "src": "styles/main.scss",
     "isEntry": true
   }

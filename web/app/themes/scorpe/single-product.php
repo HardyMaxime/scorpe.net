@@ -6,7 +6,7 @@
 ?>
 <?php get_template_part("parts/products/header"); ?>
 <section class="section section-page overflow-x no-padding-top">
-    <?php get_template_part("parts/products/preview"); ?>
+    <?php // get_template_part("parts/products/preview"); ?>
     <section class="section-content container">
         <section class="product-details-wrapper" id="details">
             <?php get_template_part('parts/products/content'); ?>
