@@ -2,8 +2,8 @@
     $focus_title = DefaultController::field_value("focus_product_title");
     $focus_description = DefaultController::field_value("focus_product_description");
     $focus_image = DefaultController::field_value("focus_product_image");
-    //$focus_video = DefaultController::field_value("focus_product_video");
-    $focus_video = true;
+    $focus_video = DefaultController::field_value("focus_product_video");
+    //$focus_video = true;
 
     $focus_detail_title = DefaultController::field_value("focus_details_product_title");
     $focus_detail_description = DefaultController::field_value("focus_details_product_description");
@@ -35,7 +35,7 @@
         <div class="section-content reveal">
             <div class="section-focus-product-video-wrapper">
                 <video id="focus-product-video" class="section-focus-product-video reveal-translate reveal-2" muted loop poster="<?= esc_url($focus_image['url']); ?>">
-                    <source src="<?= esc_url(get_template_directory_uri() . '/assets/AiraclesVuse.mp4'); ?>" type="video/mp4">
+                    <source src="<?= esc_url($focus_video); ?>" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="focus-product-video-controls">
