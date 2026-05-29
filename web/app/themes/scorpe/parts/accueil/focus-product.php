@@ -31,11 +31,11 @@
         </div>
     <?php endif; ?>
 
-    <?php if(!empty($focus_video)): ?>
+    <?php if(!empty($focus_video) && array_key_exists('url', $focus_video) && array_key_exists('mime_type', $focus_video)): ?>
         <div class="section-content reveal">
             <div class="section-focus-product-video-wrapper">
                 <video id="focus-product-video" class="section-focus-product-video reveal-translate reveal-2" muted loop poster="<?= esc_url($focus_image['url']); ?>">
-                    <source src="<?= esc_url($focus_video); ?>" type="video/mp4">
+                    <source src="<?= esc_url($focus_video['url']); ?>" type="<?= esc_attr($focus_video['mime_type']); ?>">
                     Your browser does not support the video tag.
                 </video>
                 <div class="focus-product-video-controls">
