@@ -7,6 +7,8 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
+assets/dist
+web/app/themes/scorpe/assets/dist
 
 indexnow
 
