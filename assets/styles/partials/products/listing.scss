@@ -55,7 +55,7 @@
         transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
-        background: rgba($color: #000000, $alpha: .05);
+        background: rgba($color: #000000, $alpha: .01);
         clip-path: inherit; /* même forme */
         z-index: -1;
     }

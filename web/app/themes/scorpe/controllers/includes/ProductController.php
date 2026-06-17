@@ -281,14 +281,26 @@ class ProductController
     public static function getProductGallery(string $id): array|bool
     {
         $gallery = DefaultController::field_value("product_gallery", $id);
-        if(!empty($gallery))
+        if(!empty($gallery) && is_array($gallery))
         {
+            // ACF returns IDs when the field is not synced with return_format: "array"
+            if(is_numeric($gallery[0]))
+            {
+                $gallery = array_map(function($attachment_id) {
+                    $img = wp_get_attachment_image_src($attachment_id, 'full');
+                    return [
+                        'url' => $img ? $img[0] : '',
+                        'alt' => get_post_meta($attachment_id, '_wp_attachment_image_alt', true),
+                    ];
+                }, $gallery);
+            }
             return $gallery;
         }
         //$gallery[0] = self::getProductThumbnails($id, null, "product"); // Précharge l'image à la une du produit dans la galerie pour éviter les problèmes de chargement de l'image à la une dans le slider
         $gallery = [];
-        $gallery[0]['url']= ProductController::getProductBanner(get_the_ID(), "background");
-        $gallery[0]['alt']= get_the_title($id);
+        //$gallery[0]['url']= ProductController::getProductBanner(get_the_ID(), "background");
+        $gallery[0]['url']= DefaultController::getPostThumbnail(get_the_ID(), "url");
+        $gallery[0]['alt']= DefaultController::getPostThumbnail(get_the_ID(), "alt");
         return $gallery;
     }
 

@@ -148,8 +148,7 @@
 
 .single-product .product-preview
 {
-    padding-top: _rem(90px);
-    padding-bottom: _rem(90px);
+    padding-top: _rem(40px);
 }
 
 @media only screen and (max-width: $tablet) 
@@ -189,6 +188,11 @@
 
 @media only screen and (max-width: $mobile) 
 {
+    .single-product .product-preview
+    {
+        padding-top: 0;
+    }
+
     .product-preview-wrapper {
         display: flex;
         flex-direction: column;
