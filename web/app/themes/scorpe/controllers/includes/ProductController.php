@@ -280,12 +280,17 @@ class ProductController
 
     public static function getProductGallery(string $id): array|bool
     {
+        $result = [];
+
+        $thumbnail = DefaultController::getPostThumbnail($id, null, false);
+        if (!empty($thumbnail)) {
+            $result[] = $thumbnail;
+        }
+
         $gallery = DefaultController::field_value("product_gallery", $id);
-        if(!empty($gallery) && is_array($gallery))
-        {
+        if (!empty($gallery) && is_array($gallery)) {
             // ACF returns IDs when the field is not synced with return_format: "array"
-            if(is_numeric($gallery[0]))
-            {
+            if (is_numeric($gallery[0])) {
                 $gallery = array_map(function($attachment_id) {
                     $img = wp_get_attachment_image_src($attachment_id, 'full');
                     return [
@@ -294,14 +299,10 @@ class ProductController
                     ];
                 }, $gallery);
             }
-            return $gallery;
+            $result = array_merge($result, $gallery);
         }
-        //$gallery[0] = self::getProductThumbnails($id, null, "product"); // Précharge l'image à la une du produit dans la galerie pour éviter les problèmes de chargement de l'image à la une dans le slider
-        $gallery = [];
-        //$gallery[0]['url']= ProductController::getProductBanner(get_the_ID(), "background");
-        $gallery[0]['url']= DefaultController::getPostThumbnail(get_the_ID(), "url");
-        $gallery[0]['alt']= DefaultController::getPostThumbnail(get_the_ID(), "alt");
-        return $gallery;
+
+        return !empty($result) ? $result : false;
     }
 
     public static function getPreviewContent(string $id, string $param = ""): array|string

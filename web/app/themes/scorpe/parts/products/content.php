@@ -7,9 +7,11 @@
                     <div class="splide__track">
                         <div class="splide__list">
                             <?php foreach($product_gallery as $key => $image): ?>
-                                <figure class="splide__slide" >
-                                    <img src="<?= esc_url($image['url']); ?>" class="contain" alt="" 
-                                    width="770" height="585" loading="lazy" />
+                                <figure class="splide__slide product-image-inner" >
+                                    <a href="<?= esc_url($image['url']); ?>" class="glightbox">
+                                        <img src="<?= esc_url($image['url']); ?>" class="contain" alt="" 
+                                            width="770" height="585" loading="lazy" />
+                                    </a>
                                 </figure>
                             <?php endforeach; ?>
                         </div>

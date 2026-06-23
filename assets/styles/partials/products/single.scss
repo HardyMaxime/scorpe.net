@@ -98,6 +98,12 @@ body:not(.is-scrolled).single-product .navbar-background
     z-index: -1;
     transform: skewX(-20deg)
 }
+.product-image-inner
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 @media only screen and (max-width:$container-fluid-size)
 {

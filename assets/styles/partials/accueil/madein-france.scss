@@ -58,6 +58,7 @@
 .figure-shape.product-image-outline::after
 {
     background: transparent;
+    z-index: -1;
 }
 
 @media only screen and (max-width:$tablet)
