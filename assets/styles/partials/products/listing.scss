@@ -55,8 +55,7 @@
         transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
-        //background: rgba($color: #000000, $alpha: .01);
-        background: rgba($color: #000000, $alpha: .1);
+        background: rgba($color: #000000, $alpha: .08);
         clip-path: inherit; /* même forme */
         z-index: -1;
     }
@@ -89,6 +88,11 @@
     text-align: center;
     justify-content: center;
     @include fontSize(20px);
+}
+
+.section-content-figure.product-image-outline::before
+{
+    background: rgba($color: #000000, $alpha: .02);
 }
 
 @media only screen and (max-width:$tablet)

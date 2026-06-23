@@ -21,7 +21,7 @@
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
-        <div class="section-content">
+        <div class="section-content product-description">
             <?php if(!empty(ProductController::getProductContent(get_the_id(), 'description'))): ?>
                 <?= ProductController::getProductContent(get_the_id(), 'description'); ?>
             <?php endif; ?>

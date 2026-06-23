@@ -98,11 +98,24 @@ body:not(.is-scrolled).single-product .navbar-background
     z-index: -1;
     transform: skewX(-20deg)
 }
+
 .product-image-inner
 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 20px 0;
+}
+
+.product-image-inner a
+{
+    width: 100%;
+    height: 100%;
+}
+
+.product-preview .product-description
+{
+    @include fontSize(22px);
 }
 
 @media only screen and (max-width:$container-fluid-size)
@@ -114,7 +127,7 @@ body:not(.is-scrolled).single-product .navbar-background
 
     .product-preview .product-description
     {
-        @include fontSize(24px);
+        @include fontSize(20px);
     }
 }
 
@@ -127,7 +140,7 @@ body:not(.is-scrolled).single-product .navbar-background
 
     .product-preview .product-description
     {
-        @include fontSize(24px);
+        font-size: 1rem;
     }
 }
 
