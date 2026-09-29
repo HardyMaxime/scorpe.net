@@ -1,6 +1,7 @@
-<?php 
+<?php
     $responsive_table = DefaultController::field_value("carac_not_responsive_table", get_the_ID()) ?? false;
     $table = (isset($args['table']) ? $args['table'] : false );
+    $gallery = (isset($args['gallery']) ? $args['gallery'] : false );
 ?>
 <details class="product-details" open >
     <summary class="title-with-arrow-icon white-arrow" >
@@ -65,6 +66,16 @@
                     </table>
                 </div>
             <?php endwhile; ?>
+        <?php endif; ?>
+        <?php if($gallery): ?>
+            <div class="product-gallery">
+                <?php foreach($gallery as $key => $image): ?>
+                    <a href="<?= esc_url($image['url']); ?>" class="glightbox product-gallery-item product-image-outline">
+                        <img src="<?= esc_url($image['url']); ?>" class="cover" alt="<?= esc_attr($image['alt']); ?>"
+                            width="770" height="585" loading="lazy" />
+                    </a>
+                <?php endforeach; ?>
+            </div>
         <?php endif; ?>
     </div>
 </details>

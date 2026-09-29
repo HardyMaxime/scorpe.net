@@ -131,10 +131,12 @@ hr
 
 .product-details
 {
-    margin-top: 20px;
+    margin-top: 15px;
 
     summary
     {
+        background:#fafafa;
+        padding: 20px 10px;
         cursor: pointer;
         display: flex;
         align-items: center;

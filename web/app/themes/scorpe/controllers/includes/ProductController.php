@@ -282,11 +282,6 @@ class ProductController
     {
         $result = [];
 
-        $thumbnail = DefaultController::getPostThumbnail($id, null, false);
-        if (!empty($thumbnail)) {
-            $result[] = $thumbnail;
-        }
-
         $gallery = DefaultController::field_value("product_gallery", $id);
         if (!empty($gallery) && is_array($gallery)) {
             // ACF returns IDs when the field is not synced with return_format: "array"

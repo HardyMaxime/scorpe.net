@@ -21,26 +21,13 @@
         <?php if (have_posts()): ?>
             <section class="section-search-content">
                 <div class="product-listing">
-                    <?php while (have_posts()) : the_post(); 
-                        $is_new = ProductController::isNewProduct(get_the_ID());
+                    <?php while (have_posts()) : the_post();
+                        $thumb = ProductController::getProductThumbnails(get_the_ID(), null, "listing");
                     ?>
-                        <a href="<?= get_the_permalink(); ?>" class="product-listing-item">
-                            <?php if(ProductController::getProductThumbnails(get_the_ID(), true)): ?>
-                                <img src="<?= esc_url(ProductController::getProductThumbnails(get_the_ID(), "url")); ?>" 
-                                    width="330" height="200" alt="<?= esc_attr(ProductController::getProductThumbnails(get_the_id(),"alt")); ?>" loading="lazy" />
-                            <?php else: ?>
-                                <img src="<?= esc_url(ProductController::getDefautThumb()); ?>" 
-                                    width="330" height="200" alt="<?= "Scorpe Technologies - " . esc_attr(get_the_title()); ?>" loading="lazy" />
-                            <?php endif; ?>
-                            <?php if($is_new): ?>
-                                <span class="badges">
-                                    <?= LanguageController::translateStaticText("New", "Nouveau"); ?>
-                                </span>
-                            <?php endif; ?>
-                            <h3 class="product-name link-with-arrow">
-                                <?= esc_html(get_the_title()); ?>
-                            </h3>
-                        </a>
+                        <?php get_template_part('parts/products/listing_item', null, array(
+                            'thumb' => $thumb,
+                            'title' => get_the_title(),
+                        )); ?>
                     <?php endwhile; ?>
                 </div>
                 <?= DefaultController::clbs_pagination($paged); ?>

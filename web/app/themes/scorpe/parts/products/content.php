@@ -1,34 +1,24 @@
 <?php  $product_gallery = ProductController::getProductGallery(get_the_ID()); ?>
 
+<?php if(!empty(DefaultController::field_value('product_short_description', get_the_id()))): ?>
 <section class="section product-preview mb-5">
-    <div class="section-media reverse reveal">
-            <?php if($product_gallery): ?>
-                <div class="section-content-figure figure-shape product-image-outline splide strech-slider">
-                    <div class="splide__track">
-                        <div class="splide__list">
-                            <?php foreach($product_gallery as $key => $image): ?>
-                                <figure class="splide__slide product-image-inner" >
-                                    <a href="<?= esc_url($image['url']); ?>" class="glightbox">
-                                        <img src="<?= esc_url($image['url']); ?>" class="contain" alt="" 
-                                            width="770" height="585" loading="lazy" />
-                                    </a>
-                                </figure>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <?php if(count($product_gallery) > 1): ?>
-                    <div class="splide__arrows"></div>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
-        <div class="section-content product-description">
-            <?php if(!empty(ProductController::getProductContent(get_the_id(), 'description'))): ?>
-                <?= ProductController::getProductContent(get_the_id(), 'description'); ?>
-            <?php endif; ?>
+    <div class="reveal">
+        <div class="product-description">
+                <?= DefaultController::field_value('product_short_description', get_the_id()); ?>
+            </div>
         </div>
-    </div>
-</section>
-<section class="products-details">
+    </section>
+<?php endif; ?>
+<section class="products-details" id="details">
+    <?php if(!empty(ProductController::getProductContent(get_the_id(), 'description')) || !empty(DefaultController::field_value('product_characteristic_table', get_the_id())) || $product_gallery): ?>
+        <?php get_template_part('parts/products/detail/detail', null, array(
+             'open' => true,
+             'title' => LanguageController::currentLanguage() == "en" ? "Description" : "Description",
+             'content' => ProductController::getProductContent(get_the_id(), 'description'),
+             'table' => DefaultController::field_value('description', get_the_id()),
+             'gallery' => $product_gallery,
+        )); ?>
+    <?php endif; ?>
     <?php if(!empty(ProductController::getProductContent(get_the_id(), 'characteristic')) || !empty(DefaultController::field_value('product_characteristic_table', get_the_id()))): ?>
         <?php get_template_part('parts/products/detail/detail', null, array(
              'open' => true,
