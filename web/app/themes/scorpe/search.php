@@ -56,7 +56,7 @@
                     </p>
                 <?php endif; ?>
             </hgroup>
-            <?php get_template_part('parts/products/categories', null, array('current_url' => get_permalink(12), 'term_id' => null)); ?>
+            <?php get_template_part('parts/page/card/teaser', null, array('current_url' => LanguageController::getProductURL(), 'term_id' => null)); ?>
         </section>
     </section>
 <?php get_footer(); ?>

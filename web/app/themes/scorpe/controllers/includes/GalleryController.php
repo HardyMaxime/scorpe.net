@@ -65,7 +65,7 @@ class GalleryController
     /**
      *  Obtenir la galerie d'image
      */
-    public static function getGallery(int $offset = 0, int $max = 0, string|int $id = null): array
+    public static function getGallery(int $offset = 0, int $max = 0, string|int|null $id = null): array
     {
         $galleries = DefaultController::field_value("page_gallery_listing", $id) ?? [];
         if($max > 0) {
